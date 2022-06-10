@@ -1,0 +1,433 @@
+<main>
+    <!-- ============= HOME ============= -->
+    <section class="home">
+        <div class="home__container container">
+            <div class="home-content">
+                <div class="home-left wow animate__animated animate__fadeInDown">
+                    <h1 class="home-left__h1">Create, Sell & Collect Your Own Creative NFT</h1>
+                    <p class="home-left__p">For you: <span class="home-left__dinamic-text" #dText></span></p>
+
+                    <div class="home-btns">
+                        <a href="#collections" class="btn btn-default home-btn__a">Explore now</a>
+                        <a href="#banner" class="btn btn-default home-btns__a">Sell NFT</a>
+                    </div>
+
+                    <div class="home-record">
+                        <div class="home-record__item">
+                            <p class="home-record__number">37k+</p>
+                            <p class="home-record__title">Artworks</p>
+                        </div>
+
+                        <div class="home-record">
+                            <p class="home-record__number">20k+</p>
+                            <p class="home-record__title">Artist</p>
+                        </div>
+
+                        <div class="home-record">
+                            <p class="home-record__number">99k+</p>
+                            <p class="home-record__title">Aucations</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="home-right wow animate__animated animate__fadeInUp">
+                    <img src="assets/img/heroimage.png" class="home-right__img float" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= ABOUT ============= -->
+    <section class="about">
+        <div class="about__container container wow animate__animated animate__zoomIn">
+            <div class="about-box">
+                <div class="about-title">
+                    <h4 class="about-title__h4 sub-heading">About us</h4>
+                    <h3 class="about-title__h3 heading">monetize every digital assets with NFT</h3>
+                </div>
+
+                <div class="about-content">
+                    <p class="about-content__p">We are the first company based in Mexico whose purpose is to help and advise digital content creators so that they can create their NFTS of all their works.
+                    </p>
+                    <p class="about-content__p">in Cripto Recarga our mission is:</p>
+                </div>
+
+                <div class="about-list">
+                    <ul class="about-list__ul">
+                        <li class="about-list__li">
+                            <span class="about-list__span"><i class='about-list__i bx bxs-badge-check'></i></span>
+                            <p class="about-list__p">
+                                help new users get started with ETH and Ethereum
+                            </p>
+                        </li>
+
+                        <li class="about-list__li">
+                            <span class="about-list__span"><i class='about-list__i bx bxs-badge-check'></i></span>
+                            <p class="about-list__p">
+                                solve doubts or comments about how to create NFT
+                            </p>
+                        </li>
+
+
+                        <li class="about-list__li">
+                            <span class="about-list__span"><i class='about-list__i bx bxs-badge-check'></i></span>
+                            <p class="about-list__p">
+                                help our content creator users can sell their work.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= TOP NFT ============= -->
+    <section class="tnft">
+        <div class="tnft__container container wow animate__animated animate__zoomIn">
+            <h2 class="tnft__h2 head">Top NFTs</h2>
+            <h3 class="tnft__h3">
+                The top NFTs on OpenSea, ranked by volume, floor price and other statistics.
+            </h3>
+
+            <div class="top">
+                <table class="top__table">
+                    <thead class="top__thead">
+                        <tr class="top__tr">
+                            <th class="top__th">Collection</th>
+                            <th class="top__th">Volume</th>
+                            <th class="top__th">24 H%</th>
+                            <th class="top__th">Floor price</th>
+                            <th class="top__th">Owners</th>
+                            <th class="top__th">Items</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="top__tbody">
+                        <tr *ngFor="let nft of nft; let i = index" class="top__tr">
+                            <td data-label="COLLECTION" class="top__td top__td--collection">
+                                <span> {{i +1}} </span>
+
+                                <span class="top__span--img">
+                                <img [src]="nft.collection_img" class="top__img--author" alt="">
+                               </span>
+
+                                <span> {{ nft.collection_auth }}  </span>
+
+                            </td>
+                            <td data-label="VOLUME" class="top__td">
+                                <span>
+                                    <img [src]="nft.volume_img" class="top__img--eth" alt="">
+                                </span>
+
+                                <span>
+                                    {{ nft.volume }}
+                                </span>
+                            </td>
+
+                            <td data-label="24H%" class="top__td">
+                                <span class="top__value--p"> {{ nft.latest_sales }} </span>
+                            </td>
+
+                            <td data-label="FLOOR PRICE" class="top__td">
+                                <span> <img [src]="nft.volume_img" class="top__img--eth" alt=""></span>
+                                <span> {{ nft.price }} </span>
+                            </td>
+
+                            <td data-label="OWNERS" class="top__td"> {{ nft.owners }} </td>
+
+                            <td data-label="ITEMS" class="top__td"> {{ nft.items }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- ============= MEANING ============= -->
+    <section class="meaning">
+        <!-- section title -->
+        <h3 class="meaning__h3 head padd-15 wow animate__animated animate__fadeInUp">Whats is a NFT?</h3>
+        <!-- section container -->
+        <div class="meaning__container container">
+
+            <div class="mleft  wow animate__animated animate__fadeInDown">
+                <img src="assets/img/Bitcoin P2P-amico.svg" class="mleft__img" alt="currency digital, bitcoin" loading="lazy">
+            </div>
+
+            <div class="mright wow animate__animated animate__fadeInUp">
+                <div class="mright__content">
+                    <!-- currency text-->
+                    <p class="mright__p"> <strong>Non-fungible token </strong> or NFTs are tokens that we can use to represent ownership of unique items. They let us tokenise things like art, collectibles, even real estate. They can only have one official owner at a time and
+                        they're secured by the Ethereum blockchain – no one can modify the record of ownership or copy/paste a new NFT into existence. NFT stands for non-fungible token. Non-fungible is an economic term that you could use to describe things
+                        like your furniture, a song file, or your computer. These things are not interchangeable for other items because they have unique properties. Fungible items, on the other hand, can be exchanged because their value defines them
+                        rather than their unique properties. For example, ETH or dollars are fungible because 1 ETH / $1 USD is exchangeable for another 1 ETH / $1 USD.
+                    </p>
+
+                    <a href="https://www.forbes.com/advisor/investing/cryptocurrency/what-is-bitcoin/" rel="noopener noreferrer" data-label="What is Bitcoin" target="_blank" class="btn btn-default">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= FEATURE ============= -->
+    <section class="features">
+        <!-- section title -->
+        <h2 class="features__h2 head padd-15 wow animate__animated animate__fadeInDown">Features</h2>
+
+        <!-- section container -->
+        <div class="features__container container">
+
+            <div class="features-left wow animate__animated animate__fadeInUp">
+                <h4 class="features-left__h4 sub-heading">The new way to offer and sell your digital items</h4>
+                <h3 class="features-left__h3 heading">monetize every digital item with NFT</h3>
+
+                <!-- feature content -->
+                <div class="features-content">
+                    <!-- feature item -->
+                    <div class="features-content__item">
+                        <div class="features-content__title">
+                            <i class='features-content__i bx bx-check'></i>
+                            <h4 class="features-content__h4">Unique</h4>
+                        </div>
+                        <p class="features-content__p">
+                            An NFT can only have one owner at a time. Ownership is managed through the uniqueID and metadata that no other token can replicate. NFTs are minted through smart contracts that assign ownership and manage the transferability of the NFT's.
+                        </p>
+                    </div>
+                    <!-- features item -->
+                    <div class="features-content__item">
+                        <div class="features-content__title">
+                            <i class='features-content__i bx bx-check'></i>
+                            <h4 class="features-content__h4">Authenticity, and Ownership</h4>
+                        </div>
+
+                        <p class="features-content__p">
+                            The creators public key is essentially a permanent part of the token's history. The creator's public key can demonstrate that the token you hold was created by a particular individual, thus contributing to its market value (vs a counterfeit).
+                        </p>
+                    </div>
+
+                    <!-- features item -->
+                    <div class="features-content__item">
+                        <div class="features-content__title">
+                            <i class='features-content__i bx bx-check'></i>
+                            <h4 class="features-content__h4">Royalties</h4>
+                        </div>
+
+                        <p class="features-content__p">
+                            Creators can retain ownership rights over their own work, and claim resale royalties directly. Platforms, such as music streaming services, retain the majority of profits from sales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-right wow animate__animated animate__fadeInDown">
+                <img src="assets/img/Online gallery-pana.svg" width="392" height="258" alt="important features of the App " class="features-right__img" loading="lazy ">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============= OUR BENEFITS ============ -->
+    <section class="benefits">
+        <div class="benefits__container container">
+
+            <!-- benefit left -->
+            <div class="benefits-left wow animate__animated animate__fadeInUp">
+                <!-- section title -->
+                <div class="benefits-left__titles">
+                    <h3 class="benefits-left__h3 sub-heading">The most trusted cryptocurrency platform</h3>
+                    <h2 class="benefits-left__h2 heading">Create and sell your NFTs</h2>
+                    <p class="benefits-left__p text">Create Smart contracts for you digital assets and assing or claim onwership of this</p>
+                </div>
+
+                <!-- record container -->
+                <div class="benefits-record">
+                    <!-- record item-->
+                    <div class="benefits-record__item">
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="100">0</span>+</h2>
+                        <h5 class="benefits-record__h5">Countries supported</h5>
+                    </div>
+
+                    <!-- record item-->
+                    <div class="benefits-record__item">
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="30">0</span>+</h2>
+                        <h5 class="benefits-record__h5">Criptocurrencies</h5>
+                    </div>
+
+                    <!-- record item-->
+                    <div class="benefits-record__item">
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="400">0</span>+</h2>
+                        <h5 class="benefits-record__h5">thousand users trust us</h5>
+                    </div>
+
+                    <!-- record item-->
+                    <div class="benefits-record__item">
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="70">0</span>+</h2>
+                        <h5 class="benefits-record__h5">payments using crypto</h5>
+                    </div>
+                </div>
+
+                <div class="benefits-record__btns">
+                    <a href="https://bitso.com/app " target="_blank " rel="noopener noreferrer " class="btn btn-default">goin to</a>
+                </div>
+
+            </div>
+
+            <!-- benefit right -->
+            <div class="benefits-right wow animate__animated wow animate__fadeInDown">
+
+                <!-- benefit item -->
+                <div class="benefits-right__item">
+                    <div class="benefits-right__description">
+                        <div class="benefits-right__img">
+                            <i class='benefits-right__i bx bxs-lock'></i>
+                        </div>
+                        <h3 class="benefits-right__h3">secure</h3>
+                        <p class="benefits-right__p">Your transaction data is secured via end-to-end encryption, ensuring that only you have access to your personal information.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- benefit item -->
+                <div class="benefits-right__item">
+                    <div class="benefits-right__description">
+                        <div class="benefits-right__img">
+                            <i class='benefits-right__i bx bxs-badge-dollar'></i>
+                        </div>
+                        <h3 class="benefits-right__h3">Royalties</h3>
+                        <p class="benefits-right__p"> Some NFTs will automatically pay out royalties to their creators when they're sold so creators can just sit back and earn royalties as their work is sold from person to person.</p>
+                    </div>
+                </div>
+
+                <!-- benefit item -->
+                <div class="benefits-right__item">
+                    <div class="benefits-right__description">
+                        <div class="benefits-right__img">
+                            <i class='benefits-right__i bx bx-receipt'></i>
+                        </div>
+                        <h3 class="benefits-right__h3">Digitally Scarce resource</h3>
+                        <p class="benefits-right__p">NFT is stored in the blockchain network. Hence, the certificate of ownership is available on multiple networks, making it possible to prove digital asset’s ownership.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- benefit item -->
+                <div class="benefits-right__item">
+                    <div class="benefits-right__description">
+                        <div class="benefits-right__img">
+                            <i class='benefits-right__i bx bxs-business'></i>
+                        </div>
+                        <h3 class="benefits-right__h3">greater acceptance</h3>
+                        <p class="benefits-right__p">more people in more place trust cryptocurrencies. There are a growing number of businesses and individuals using this currency. This includes brick-and-mortar businesses like restaurants, apartments, and law firms,
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= REGISTER ============ -->
+    <section class="registers">
+        <div class="registers__container container">
+
+            <div class="register wow animate__animated animate__fadeInUp">
+
+                <!-- register item -->
+                <div class="register__card">
+                    <i class='register__i bx bxs-user-plus'></i>
+                    <h3 class="register__h3">Set up your wallet</h3>
+                </div>
+
+                <!-- register item -->
+                <div class="register__card">
+                    <i class='register__i bx bxs-user-plus'></i>
+                    <h3 class="register__h3">Create your collection</h3>
+                </div>
+
+                <!-- register item -->
+                <div class="register__card">
+                    <i class='register__i bx bxs-user-plus'></i>
+                    <h3 class="register__h3">Add your NFTs</h3>
+                </div>
+
+                <!-- register item -->
+                <div class="register__card">
+                    <i class='register__i bx bxs-user-plus'></i>
+                    <h3 class="register__h3">List them for sale</h3>
+                </div>
+            </div>
+
+            <!-- register info -->
+            <div class="register__info wow animate__animated animate__fadeInUp">
+                <h3 class="register__h3 sub-heading">How do i register?</h3>
+
+                <h2 class="register__h2 heading">Your safe gateway to new market of createn digital content</h2>
+                <p class="register__p text">Sign up and get started today!! discover new ways to Authenticity your digital assets. You are a creator, not a programmer. We handle all of the difficult technology pieces for you, meaning that creating an NFT with us is as easy as selling
+                    something on Ebay.</p>
+
+                <div class="register__btns">
+                    <a href="https://bitso.com/?ref=cbwo" class="btn btn-default " rel="noreferrer noopener " target="_blank " data-label="started ">Start investing</a>
+                    <a href="#" class="btn btn-default">Read more</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ============= PRODUCTS ============ -->
+    <section class="products">
+        <div class="products__container container">
+
+            <!-- section title -->
+            <div class="products__header wow animate__animated animate__fadeInUp">
+                <h3 class="products__h3 head">PRODUCTS </h3>
+                <h2 class="products__h2">Convert to NFT your digital assets </h2>
+            </div>
+            <!-- button filter -->
+            <div class="filters" #filter>
+                <button class="filters__btn active-filter" data-filter="All">All</button>
+                <button class="filters__btn" data-filter="Art">Art</button>
+                <button class="filters__btn" data-filter="Collectible">Collectible</button>
+                <button class="filters__btn" data-filter="Photography">Photography</button>
+                <button class="filters__btn" data-filter="Virtual-World">Virtual World</button>
+            </div>
+
+            <div class="gallery">
+
+                <!-- gallery item -->
+                <div *ngFor="let item of gallery" class="gallery__item" data-category="item.category">
+                    <!-- gallery img -->
+
+                    <img [src]="item.img" class="gallery__img" alt="">
+                    <div class="gallery__img--auth">
+                        <img [src]="item.authorImg" class="gallery__img--auth" alt="">
+                    </div>
+                    <div class="gallery__term"> {{ item.category }} </div>
+                    <!-- ===== details  ===== -->
+                    <div class="gallery__detail">
+                        <div class="gallery__author">
+                            <p class="gallery__auth">by {{ item.author }}</p>
+                            <h5 class="gallery__title"> {{ item.title }} </h5>
+                        </div>
+
+                        <div class="gallery_price">
+                            <p class="gallery__p">price</p>
+                            <span class="gallery__span">
+                            <img [src]="item.icon" class="gallery__icon" alt="">
+                            <h5 class="gallery__title">{{ item.price }}</h5>
+                        </span>
+                        </div>
+                    </div>
+
+                    <div class="gallery__read">
+                        <a class="btn-default btn" [href]="item.link" target="_blank" rel="no-referrer noopener">Read more</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>

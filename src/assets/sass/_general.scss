@@ -1,0 +1,225 @@
+.light-theme {
+    --background: linear-gradient(100deg, hsl(0, 0%, 97%) -30.3%, hsl(0, 0%, 97%) 58.12%);
+    --back-card: hsla(254, 32%, 92%, 1);
+    --custom-header: linear-gradient(90deg, #743642, #3e47af);
+    --color-text: hsl(210, 1%, 44%);
+    --color-a: hsl(219deg 13% 37%);
+}
+
+.dark-theme {
+    --background: linear-gradient(100deg, hsl(13, 46%, 41%) -30.3%, hsl(231, 46%, 17%) 58.12%);
+    --back-card: hsla(253, 15%, 65%, 0.31);
+    --custom-header: linear-gradient(90deg, #563346, #2d3f9b);
+    --nav-menu: linear-gradient(47deg, #28315c -30.3%, #4e3333 58.12%);
+    --color-text: hsl(223, 9%, 85%);
+    --color-a: hsl(0, 0%, 100%);
+}
+
+:root {
+    --header-height: 3.5rem;
+    --primary-color-hue: 352;
+    --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+    --color-gray: hsl(252, 15%, 65%);
+    --card: 253, 15%, 65%, 0.31;
+    /* ============ Tipografia =============  */
+    --font-poppins: 'Poppins', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    /* ============= Font weight ============= */
+    --font-400: 400;
+    --font-500: 500;
+    --font-600: 600;
+    /* ============ Sizes =============  */
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --shadow-card: 0 10px 10px hsl(0deg 0% 0% / 5%);
+    --card-padding: 1.9rem 0.95rem;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+
+/* Responsive Typography */
+
+@media screen and (max-width: 992px) {
+     :root {
+        --h1-font-size: 1.75rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+    }
+}
+
+
+/* ============ ScrollBar =============  */
+
+::-webkit-scrollbar {
+    width: .8rem;
+    border-radius: .5rem;
+    background-color: hsl(228, 8%, 76%);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(228, 8%, 54%);
+}
+
+
+/* ============= Buttons ============= */
+
+.btn {
+    padding: 0.75rem 2rem;
+    line-height: 1;
+    border-radius: var(--border-radious);
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn-default {
+    color: #FFF;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: var(--color-primary);
+    transform: perspective(1px) translateZ(0);
+}
+
+.btn-default:hover {
+    animation-name: button-push;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+.bx {
+    font-size: 1.7rem;
+    color: var(--color-gray);
+}
+
+
+/* ============ Container =============  */
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.head {
+    color: var(--color-gray);
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+}
+
+.head:before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -8px;
+    background-color: var(--color-primary);
+}
+
+.heading {
+    color: var(--color-gray);
+    font-size: 3rem;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 1.5rem;
+}
+
+.sub-heading {
+    color: var(--color-gray);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    /* border-left: 3px solid var(--color-primary); */
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.sub-heading::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 50%;
+    margin-left: -8px;
+    background-color: var(--color-primary);
+}
+
+.text {
+    font-size: var(--normal-font-size);
+    margin: 1rem 0.80rem;
+    color: var(--color-text-card);
+}
+
+
+/* ============ RESPONSIVE GENERAL =============  */
+
+@media screen and (max-width: 1000px) {
+    .head {
+        font-size: 2rem;
+    }
+    .sub-heading {
+        font-size: 0.75rem;
+    }
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+     :root {
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.3rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: .838rem;
+        --small-font-size: .713rem;
+    }
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

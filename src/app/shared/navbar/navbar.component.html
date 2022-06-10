@@ -1,0 +1,121 @@
+<header class="header" id="header" #header>
+    <nav class="header__nav nav container">
+        <!-- ======= Logo======= -->
+        <a routerLink="/" class="nav__logo">
+            <h2 class="nav__h2">Cripto <span class="nav__span"> Recarga</span> </h2>
+        </a>
+        <!-- ======= Nav list ======= -->
+        <div class="nav__container" #navMenu>
+            <ul class="nav__ul">
+                <li class="nav__li"><a href="#" class="nav__a">Collection</a>
+
+
+                    <!-- <ul class="dropdown__ul dropdown">
+                        <li class="dropdown__li">
+                            <a href="#" class="dropdown__a">Collectibles</a>
+                            <a href="#" class="dropdown__a">Arts</a>
+                            <a href="#" class="dropdown__a">Photography</a>
+                            <a href="#" class="dropdown__a">Music</a>
+                            <a href="#" class="dropdown__a">Sports</a>
+                            <a href="#" class="dropdown__a">Trading Cards</a>
+                            <a href="#" class="dropdown__a">Virtual Worlds</a>
+                        </li>
+                    </ul> -->
+
+                </li>
+                <li class="nav__li"><a href="#" class="nav__a">Ranking</a></li>
+                <li class="nav__li"><a href="#" class="nav__a">Sources</a>
+
+                    <ul class="dropdown">
+                        <li class="dropdown__li">
+                            <a routerLink="faqs" routerLinkActive="active" class="dropdown__a">FAQS</a>
+                            <a routerLink="contact" class="dropdown__a">Contact</a>
+                            <a routerLink="blog" class="dropdown__a">Blog</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__li"><a href="#" class="nav__a">Marketplace</a></li>
+            </ul>
+
+
+            <!-- <div class="login-mobile">
+                <a href="#" class="login-mobile__a">Login</a>
+                <a href="#" class="login-mobile__a">Register</a>
+            </div> -->
+
+
+            <div class="nav__close" id="nav__close" #nav_close (click)="hiddenMenu()">
+                <i class='bx bx-x nav__i'></i>
+            </div>
+        </div>
+
+        <!-- Log and register -->
+        <!-- <div class="login-desktop">
+            <a href="#" class="login-desktop__a">Login</a>
+            <a href="#" class="login-desktop__a">Register</a>
+        </div> -->
+
+        <!-- Btn nav -->
+        <div class="nav__btns">
+            <!-- Theme change btn -->
+            <i class='bx bxs-palette nav__palette' id="theme-buttom" #themeBtn (click)="openTheme()"></i>
+
+            <!-- Toggle btn -->
+            <div class="nav__toggle" id="nav__toggle" #navToggle (click)="showMenu()">
+                <i class='bx bx-grid-alt'></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= THEME ======= -->
+    <div class="theme" #themeCard>
+        <div class="theme__card">
+            <i class='theme__i bx bxs-x-circle' #btnmodal (click)="closeModal()"></i>
+            <h2 class="theme__h2">Customize your view</h2>
+            <p class="theme__p">Manage your font size, color and background</p>
+
+            <!-- FONT SIZE -->
+            <div class="font">
+                <h3 class="font__h3">Font Size</h3>
+
+                <div class="font__container">
+                    <h6 class="font__h6">Aa</h6>
+                    <div class="selector">
+                        <span class="selector__span selector__1"></span>
+                        <span class="selector__span selector__2"></span>
+                        <span class="selector__span selector__3 selector__span--active"></span>
+                        <span class="selector__span selector__4"></span>
+                    </div>
+                    <h3 class="font__H3">Aa</h3>
+                </div>
+            </div>
+
+            <!-- Color -->
+            <div class="color">
+                <h3 class="color__h3">Color</h3>
+                <div class="color__container">
+                    <span class="color__span color__span--1"></span>
+                    <span class="color__span color__span--2"></span>
+                    <span class="color__span color__span--3 color__span--active"></span>
+                    <span class="color__span color__span--4"></span>
+                </div>
+            </div>
+
+            <!-- THEME DESKTOP -->
+            <button data-label="bottom" class="theme-btn theme-btn-desktop light">
+                    <i  class='theme-btn-i bx bxs-moon moon'></i>
+                    <i  class='theme-btn-i bx bxs-sun sun'></i>
+                </button>
+
+
+
+            <!-- THEME MOBILE -->
+            <button class="theme-btn theme-btn-mobile light">
+                <i class='theme-btn-i bx bxs-moon moon'></i>
+                <i class='theme-btn-i bx bxs-sun sun'></i>
+              </button>
+
+
+        </div>
+    </div>
+</header>

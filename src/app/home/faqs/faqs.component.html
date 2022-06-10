@@ -1,0 +1,137 @@
+<!-- ============= HERO FAQS============= -->
+<div class="hero  banner__faqs">
+    <div class="hero__container container">
+        <div class="hero__title">
+            <h1 class="hero__h1">Find answers to recurring questions and myths about NFT</h1>
+        </div>
+
+        <div class="hero__content">
+            <ul class="hero__ul">
+                <li class="hero__li"><a routerLink="/" class="hero__a">Home</a>
+                    <i class='hero__i bx bx-chevron-right bx-icon'></i>
+                    <span class="hero__span">Frequently Asked Questions</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ============= FAQS SECTION ============= -->
+<div class="faqs">
+    <div class="faqs__container container">
+        <!-- ============= FAQS TABLE CONTENT ============= -->
+        <div class="sidebar">
+            <div class="sidebar__container">
+                <ul class="sidebar__ul">
+                    <li class="sidebar__li"><a class="sidebar__a" data-title="What is Ethereum?" (click)="inView(item1)">What is Ethereum?</a></li>
+                    <li class="sidebar__li"><a class="sidebar__a" data-title="What is an Ethereum smart contract?" (click)="inView(item2)">What is an Ethereum-smart contract?</a></li>
+                    <li class="sidebar__li"><a class="sidebar__a" data-title="What does Ethereum do?" (click)="inView(item3)">What does Ethereum do?</a></li>
+                    <li class="sidebar__li"><a class="sidebar__a" data-title="Whats is NFT?" (click)="inView(item4)">Whats is NFT?</a></li>
+                    <li class="sidebar__li"><a class="sidebar__a" data-title="How Does an NFT Work?" (click)="inView(item5)">How Does an NFT Work?</a></li>
+                    <li class="sidebar__li"><a class="sidebar__a" data-title="What Are NFTs Used For?" (click)="inView(item6)">What Are NFTs Used For?</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============= FAQS CONTENT ============= -->
+        <div class="faqs__content">
+
+            <div class="ethereum">
+                <h2 class="faqs__h2 ethereum__h2" data-section="What-is-Ethereum?" id="What-is-Ethereum?" #item1>What is Ethereum?</h2>
+                <p class="faqs__p ethereum__p">Ethereum is a decentralized blockchain platform that establishes a peer-to-peer network that securely executes and verifies application code, called smart contracts. Smart contracts allow participants to transact with each other without
+                    a trusted central authority. Transaction records are immutable, verifiable, and securely distributed across the network, giving participants full ownership and visibility into transaction data. Transactions are sent from and received
+                    by user-created Ethereum accounts. A sender must sign transactions and spend Ether, Ethereum's native cryptocurrency, as a cost of processing transactions on the network.
+                </p>
+
+                <div class="ethereum__img"></div>
+
+                <h2 class="faqs__h2 ethereum__h2" data-section="What-is-an-Ethereum-smart-contract?" id="What-is-an-Ethereum-smart-contract?" #item2>What is an Ethereum smart contract?</h2>
+
+                <p class="faqs__p ethereum__p">
+                    contracts are written in programming languages such as
+                    <a href="https://docs.soliditylang.org/en/v0.8.13/" class="faqs__a" target="_blank">
+                   Solidity
+                </a> and
+                    <a href="https://ethereum-viper.readthedocs.io/en/latest/" class="faqs__a" target="_blank">Vyper</a>, and are compiled by the Ethereum Virtual Machine into bytecode and executed on the blockchain.
+                </p>
+
+                <div class="faqs__img">
+                    <img src="assets/img/Server-amico.svg" alt="" class="faqs__contract">
+                </div>
+
+                <h2 class="faqs__h2" id="What-does-Ethereum-do?" #item3>What does Ethereum do?</h2>
+                <p class="faqs__p">Ethereum can power a number of applications offering a wide range of functions:</p>
+
+                <ul class="faqs__ul">
+                    <li class="faqs__li">
+                        <strong>Currency</strong>: With a cryptocurrency wallet, you can send and receive ether or pay for goods and services, if the digital currency is accepted as payment. Some platforms, such as Coinbase, even allow you to take custody
+                        of your coins in a digital wallet, so you can make them less exposed to hackers, in theory.
+                    </li>
+                    <li class="faqs__li"> <strong>Smart contracts</strong>: Smart contracts are a kind of permission-less app that automatically executes when the contract’s conditions have been met.
+
+                    </li>
+
+                    <li class="faqs__li">
+                        <strong>Decentralized apps, or dApps</strong>:Ethereum powers digital apps that allow users to play games, invest, send money, track an investment portfolio, follow social media and more.
+                    </li>
+                    <li class="faqs__li">
+                        <strong>Non-fungible tokens</strong>:These tokens can be powered by Ethereum and can allow artists or others to sell art or other items directly to buyers using smart contracts.
+                    </li>
+                    <li class="faqs__li">
+                        <strong>Decentralized finance</strong>: By using Ethereum, some people may be able to avoid centralized (government) control over the movement of money or other assets.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="faqs__img--2">
+                <img src="assets/img/Digital personal files-amico.svg" class="faqs__ethereum2" alt="">
+            </div>
+
+            <div class="faqs__nft">
+                <h2 class="faqs__h2" id="Whats-is-NFT?" #item4>Whats is NFT?</h2>
+
+                <p class="faqs__p">An NFT is a digital asset that represents real-world objects like art, music, in-game items and videos. They are bought and sold online, frequently with cryptocurrency, and they are generally encoded with the same underlying software as
+                    many cryptos.</p>
+
+                <div class="faqs__img--3">
+                    <img src="assets/img/What-nfts.svg" class="faqs__nft--img" alt="">
+                </div>
+
+                <p class="faqs__p">
+                    NFT stands for non-fungible token. It’s generally built using the same kind of programming as cryptocurrency, like Bitcoin or Ethereum, but that’s where the similarity ends. Physical money and cryptocurrencies are “fungible,” meaning they can be traded
+                    or exchanged for one another. They’re also equal in value—one dollar is always worth another dollar; one Bitcoin is always equal to another Bitcoin. Crypto’s fungibility makes it a trusted means of conducting transactions on the blockchain.
+                    NFTs are different. Each has a digital signature that makes it impossible for NFTs to be exchanged for or equal to one another (hence, non-fungible). One NBA Top Shot clip, for example, is not equal to EVERYDAYS simply because they’re
+                    both NFTs. (One NBA Top Shot clip isn’t even necessarily equal to another NBA Top Shot clip, for that matter.) Best C
+                </p>
+
+                <h2 class="faqs__h2" id="How-Does-an-NFT-Work?" #item5>How Does an NFT Work?</h2>
+                <p class="faqs__p">
+                    NFTs give the ability to assign or claim ownership of any unique piece of digital data, trackable by using Ethereum's blockchain as a public ledger. An NFT is minted from digital objects as a representation of digital or non-digital assets. For example,
+                    an NFT could represent: Collectibles Music Videos Real World Items, Signatures, etc.
+                </p>
+                <p class="faqs__p">An NFT can only have one owner at a time. Ownership is managed through the uniqueID and metadata that no other token can replicate. NFTs are minted through smart contracts that assign ownership and manage the transferability of the NFT's
+                </p>
+
+                <h2 class="faqs__h2" id="What-Are-NFTs-Used-For?" #item6>What Are NFTs Used For?</h2>
+
+                <p class="faqs__p">Blockchain technology and NFTs afford artists and content creators a unique opportunity to monetize their wares. For example, artists no longer have to rely on galleries or auction houses to sell their art. Instead, the artist can sell
+                    it directly to the consumer as an NFT, which also lets them keep more of the profits. In addition, artists can program in royalties so they’ll receive a percentage of sales whenever their art is sold to a new owner. This is an attractive
+                    feature as artists generally do not receive future proceeds after their art is first sold.
+                </p>
+
+
+                <div class="nft__img--2">
+                    <img src="assets/img/Online gallery-amico.svg" class="faqs__expo--nft" alt="">
+                </div>
+
+                <p class="faqs__p">
+                    The biggest use of NFTs today is in the digital content realm. That's because that industry today is broken. Content creators see their profits and earning potential swallowed by platforms. An artist publishing work on a social network makes money for
+                    the platform who sell ads to the artists followers. They get exposure in return, but exposure doesn't pay the bills. NFTs power a new creator economy where creators don't hand ownership of their content over to the platforms they use
+                    to publicise it. Ownership is baked into the content itself.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>

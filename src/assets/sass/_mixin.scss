@@ -1,0 +1,20 @@
+@mixin flex-box($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin grid-box($column, $gap) {
+    display: grid;
+    grid-template-columns: $column;
+    grid-gap: $gap;
+}
+
+@mixin img-box($url) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($url);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 132px 0 132px;
+    position: relative;
+}

@@ -1,0 +1,179 @@
+/* ============ Custom properties =============  */
+
+
+/* ============ Adaptamos modo oscuro =============  */
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --color-main: #ececec;
+        --color-secondary: #181818;
+    }
+}
+
+
+/* ============ Adaptamos modo contraste (WD)=============  */
+
+@media (prefers-contrast: light) {
+     :root {
+        --color-main: black;
+        --color-secondary: white;
+    }
+}
+
+
+/* ============ RESET CSS =============  */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+
+/* ============ Evitamos problemas con imagenes =============  */
+
+img,
+picture,
+video,
+iframe,
+figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /* opcional*/
+    object-fit: cover;
+    /* opcional */
+    object-position: center center;
+}
+
+
+/* ============ RESET a para que funcione como cajas =============  */
+
+a {
+    display: block;
+}
+
+
+/* ============ Excepto de los se encuentran en parrafos =============  */
+
+p a {
+    display: inline;
+}
+
+
+/* ============ RESET StyLE de todos las listas  =============  */
+
+li {
+    list-style-type: none;
+}
+
+
+/* ============ Confguramos un scroll suave al scrollear =============  */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ============ Desactivamos los estilos por defectos de etiquetas de texto  =============  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ============ Evitamos problemas con los pseudoelementos en quotes  =============  */
+
+blockquote:before,
+blockquote::after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+
+/* ============ Configuramos el texto seleccionado  =============  */
+
+::selection {
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+}
+
+
+/* ============ Nivelamos problemas de tipografia =============  */
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+}
+
+
+/* ============ RESET tables =============  */
+
+table,
+tr,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* ============ Evitamos problemas con los SVG =============  */
+
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+
+/* ============ Configuramos la tipografia =============  */
+
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--font-poppins);
+    color: var(--color-main);
+    background-image: var(--background);
+    /* Opcional */
+    line-height: 1.4;
+    /* Opcional */
+    hyphens: auto;
+    /* Opcional */
+    font-smooth: always;
+    /* Opcional */
+    /* opcional */
+    -webkit-font-smoothing: antialiased;
+    /* opcional */
+    -moz-osx-font-smoothing: grayscale;
+}

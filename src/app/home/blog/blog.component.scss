@@ -1,0 +1,183 @@
+@use 'mixin';
+
+/* ============= BANNER BLOG  ============= */
+
+.banner__blog {
+    @include mixin.img-box('/assets/img/blog__banner.jpg');
+}
+
+
+/* ============= BLOG ============= */
+
+.blog__container {
+    @include mixin.grid-box(5fr 2fr, 60px);
+}
+
+.blog {
+    padding: 5rem;
+}
+
+.blog h2,
+h3 {
+    color: var(--color-gray);
+    font-weight: 600;
+}
+
+.article {
+    order: 2;
+    &__h2 {
+        line-height: 1.3;
+        margin-bottom: 3rem;
+        text-align: center;
+        font-weight: 700;
+    }
+    &__group {
+        margin-bottom: 3rem;
+    }
+    &__card {
+        background-color: var(--back-card);
+        padding: 10px;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.05);
+        transition: 0.255 ease;
+        @include mixin.grid-box(3fr 4fr, 20px);
+    }
+    &__card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
+    }
+    &__img {
+        display: block;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    &__img--card {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.wrapper {
+    padding: 10px 5px;
+    &__topic {
+        background-color: hsl(210, 38%, 95%);
+        color: var(--color-gray);
+        font-weight: 600;
+        padding: 0.25rem 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+    &__topic:hover {
+        background-color: hsl(216, 15%, 52%);
+        color: hsl(210, 38%, 95%);
+    }
+    &__h3 {
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    &__p {
+        color: var(--color-text);
+        font-size: 0.875rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+    &__desc,
+    &__author {
+        display: block;
+    }
+    &__author {
+        width: 56px;
+        height: 56px;
+        background-color: var(--back-card);
+        padding: 3px;
+        border-radius: 50%;
+    }
+    &__details {
+        @include mixin.flex-box(center);
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    &__details--span {
+        color: hsl(216, 15%, 52%);
+    }
+    &__details--span:hover {
+        color: hsl(229, 76%, 66%);
+    }
+    &__flex {
+        @include mixin.flex-box(start);
+        gap: 10px;
+    }
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+        color: hsl(214, 20%, 69%);
+    }
+    &__i {
+        width: 50px;
+        height: 50px;
+    }
+    &__time {
+        color: var(--color-text);
+    }
+}
+
+.separator {
+    background: hsl(214, 20%, 69%);
+    margin-inline: 3px;
+    margin: 0 3px;
+    /* fallback for margin-inline */
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+
+/* ============= RESPONSIVE BLOG ============= */
+
+@media screen and (max-width: 1024px) {
+    /* ============= BLOG ============= */
+    .blog__container {
+        grid-template-columns: 1fr
+    }
+    .article {
+        order: 4;
+    }
+    .aside {
+        order: 3;
+    }
+    .follow {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .wrapper {
+        &__desc,
+        &__author {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .article {
+        &__img {
+            display: none;
+        }
+        &__card {
+            grid-template-columns: 1fr;
+        }
+    }
+}

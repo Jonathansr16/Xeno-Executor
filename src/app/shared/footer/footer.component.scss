@@ -1,0 +1,105 @@
+/* ============ FOOTER ============  */
+
+.footer {
+    width: 100%;
+    background-color: var(--back-card);
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        justify-content: space-between;
+    }
+    &__sec {
+        padding: 0 1rem;
+        margin: 2rem 0;
+    }
+    &__h2 {
+        position: relative;
+        padding: 0.45rem;
+        color: var(--color-gray);
+        margin-bottom: 1rem;
+    }
+    &__h2--span {
+        color: var(--color-primary);
+    }
+    &__h2::before {
+        position: absolute;
+        content: "";
+        top: 12px;
+        left: -7px;
+        width: 2px;
+        height: 25px;
+        background-color: var(--color-primary);
+    }
+    &__p {
+        color: var(--color-text);
+        margin-bottom: 0.85rem;
+    }
+}
+
+.help {
+    &__li {
+        padding: 0.60rem 0;
+    }
+    &__a {
+        color: var(--color-gray);
+        padding-left: 0.35rem;
+        transition: all .3s ease;
+        font-weight: 500;
+    }
+}
+
+.social {
+    &__ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin: 0 0.50rem;
+    }
+    &__li:nth-child(1) &__a {
+        background-color: #3B5998;
+    }
+    &__li:nth-child(2) &__a {
+        background-color: #00ACEE;
+    }
+    &__li:nth-child(3) &__a {
+        background: #833ab4;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    &__li:nth-child(4) &__a {
+        background-color: #C4302B;
+    }
+    &__i {
+        padding: 0.50rem;
+        margin: 0.80rem;
+        color: #FFF;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* ============ FOOTER ============  */
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__h2 {
+        font-size: 1.50rem;
+    }
+    .footer__p {
+        font-size: 1.25rem;
+    }
+}

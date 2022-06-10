@@ -1,0 +1,111 @@
+.nofound {
+    background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    &__text {
+        text-align: center;
+        color: #FFF;
+        margin-top: 3rem;
+    }
+    &__h2 {
+        font-size: 15rem;
+        font-weight: 700;
+        line-height: 0.7;
+    }
+    &__h3 {
+        font-size: 4rem;
+    }
+    &__a {
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        z-index: 100;
+        position: relative;
+        width: 230px;
+        margin: auto;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    &__a:hover {
+        background-color: #FFCB39;
+        transform: scale(1.05);
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.nofound__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8rem;
+    position: relative;
+}
+
+.earth {
+    position: absolute;
+    top: 25%;
+    left: 50px;
+    &__img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.moon {
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    &__img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.astronaut {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    will-change: transform;
+    animation: move-astronaut 20s infinite linear both alternate;
+    &__img {
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        animation: rotate-astronaut 200s infinite linear both alternate;
+    }
+}
+
+.glowing_stars {
+    background: url(/assets/img/overlay_stars.svg);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: left top;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1050px) {
+    .nofound {
+        &__h2 {
+            font-size: 10rem;
+            line-height: 1;
+        }
+        &__h3 {
+            font-size: 2.5rem;
+        }
+        .nofound__content {
+            margin-top: 20rem;
+        }
+    }
+    .moon {
+        left: 30%;
+        top: 10%;
+    }
+}

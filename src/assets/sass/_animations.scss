@@ -1,0 +1,36 @@
+.float {
+    animation: float 2.5s linear infinite;
+}
+
+@keyframes button-push {
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        -webkit-transform: translateY(0rem);
+        transform: translateY(0rem);
+    }
+    50% {
+        -webkit-transform: translateY(1rem);
+        transform: translateY(1rem);
+    }
+}
+
+@keyframes rotate-astronaut {
+    100% {
+        transform: rotate(-720deg);
+    }
+}
+
+@keyframes move-astronaut {
+    100% {
+        transform: translate(-160px, 160px);
+    }
+}

@@ -1,0 +1,158 @@
+@use 'mixin';
+.banner__faqs {
+    @include mixin.img-box('/assets/img/ban.jfif');
+}
+
+
+/* ============= FAQS  ============= */
+
+.faqs {
+    &__container {
+        @include mixin.grid-box(2fr 5fr, 60px);
+        margin-top: 3rem;
+    }
+    &__h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        position: relative;
+        color: var(--color-gray);
+        font-weight: 600;
+    }
+    &__h2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 3px;
+        width: 5px;
+        height: 50%;
+        transform: translate(-10px, 47%);
+        background-color: var(--color-primary);
+    }
+    &__p {
+        text-align: justify;
+        margin-bottom: 20px;
+        color: var(--color-text);
+        line-height: 27px;
+        font-size: var(--h3-font-size);
+    }
+    &__a {
+        color: #326891;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    &__a:hover {
+        text-decoration: none;
+    }
+    &__img,
+    &__img--3 {
+        text-align: right;
+        margin: 1.8rem 1.25rem 1.8rem 0;
+    }
+    &__img--2 {
+        text-align: left;
+        margin-left: 3rem;
+    }
+    &__ul {
+        padding-left: 2.5rem;
+    }
+    &__li {
+        list-style: disc;
+        text-align: justify;
+        margin-bottom: 20px;
+        color: var(--color-text);
+        line-height: 27px;
+        font-size: var(--h3-font-size);
+    }
+}
+
+
+/* ============= FAQS TABLE CONTENT ============= */
+
+.sidebar {
+    &__container {
+        position: sticky;
+        top: 100px;
+        margin-bottom: 3rem;
+        padding: 1.3rem;
+        background-color: var(--back-card);
+        border-radius: 10px;
+    }
+    &__li {
+        margin-bottom: 20px;
+    }
+    &__a {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-text);
+    }
+    &__a:hover {
+        color: hsl(229, 76%, 66%);
+    }
+    &__a--isActive {
+        background-color: hsl(229, 76%, 66%);
+        color: #FFF;
+        border-radius: 5px;
+        padding: 4px;
+    }
+    &__a:hover:before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 33px;
+        right: -10px;
+        background-color: hsl(229, 76%, 66%);
+    }
+}
+
+
+/* ============= FAQS CONTENT ============= */
+
+.faqs__content {
+    padding: 1rem;
+}
+
+.ethereum__img {
+    width: 90%;
+    height: 300px;
+    background-image: url('/assets/img/blockchain-3508629_1280.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.faqs__contract {
+    width: 400px;
+    height: 400px;
+}
+
+.faqs__ethereum2 {
+    width: 380px;
+    height: 380px;
+}
+
+.faqs__nft--img {
+    width: 450px;
+    height: 450px;
+}
+
+.faqs__expo--nft {
+    width: 380px;
+    height: 380px;
+}
+
+
+/* ============= FAQS RESPONSIVE ============= */
+
+@media screen and (max-width: 768px) {
+    .faqs {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
+}
