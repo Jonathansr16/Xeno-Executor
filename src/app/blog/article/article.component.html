@@ -1,63 +1,65 @@
-<!-- ============= HERO BLOG ============= -->
-<div class="hero  banner__blog">
-    <div class="hero__container container">
-        <div class="hero__title">
-            <h1 class="hero__h1">Breaking news</h1>
-        </div>
+<!-- ============= ARTICLE SECIION ============ -->
 
-        <div class="hero__content">
-            <ul class="hero__ul">
-                <li class="hero__li"><a routerLink="/" class="hero__a">Home</a>
-                    <i class='hero__i bx bx-chevron-right bx-icon'></i>
-                    <span class="hero__span">Frequently Asked Questions</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--- BLOG SECTION  --->
-<div class="blog">
-
-    <div class="blog__container container">
-        <!-- ARTICLES -->
+<div class="articles">
+    <div class="articles__container container">
         <div class="article">
+            <div class="article__box" *ngIf="post$ | async as post">
 
-            <h2 class="article__h2">Latest Blog Post</h2>
-            <div class="article__group">
+                <h1 class="article__h1">{{ post.fields.title }}</h1>
+                <img [src]="post.fields.img.fields.file.url" class="article__img" alt="">
+                <div class="article__author--img">
+                    Photo: <span class="">{{ post.fields.author }}</span>
+                </div>
+                <div class="article__detail">
+                    <span class="article__span">
+                            <i class='article__i bx bx-calendar bx-icon'></i>
+                            <p class="article__p--author">{{ post.fields.date | date: 'mediumDate' }}</p>
+                    </span>
 
-                <div class="article__card" *ngFor="let article of articles; let i = index">
+                    <span class="article__span">
+                        <i class='article__i bx bxs-user bx-icon'></i>
+                        <p class="article__p--author">{{ post.fields.author }}</p>
+                    </span>
+                </div>
 
-                    <div class="article__img">
-                        <img [src]="article.imgArticle" class="article__img--card" alt="">
+
+                <div class="article__content">
+
+                    <div class="article__p" [innerHtml]=" post.fields.content | markdown">
+
                     </div>
 
-                    <div class="wrapper">
-                        <span class="wrapper__topic">{{ article.category }}</span>
+                </div>
 
-                        <h3 class="wrapper__h3">
-                            <a [routerLink]="['article',i]" class="wrapper__a"> {{article.title}}</a>
-                        </h3>
 
-                        <p class="wrapper__p wrapper__desc">{{article.description}}</p>
-
-                        <div class="wrapper__flex">
-                            <div class="wrapper__author">
-                                <img [src]="article.authorPages" alt="" class="wrapper__author--img">
-                            </div>
-
-                            <div class="wrapper__details">
-                                <span class="wrapper__details--span">{{article.author}}</span>
-
-                                <p class="wrapper__datail">
-                                    <time class="wrapper__time" datatime="article.date">{{article.date}}</time>
-                                    <span class="separator"></span>
-                                    <i class='wrapper__i bx bxs-calendar'></i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Shared article-->
+                <div class="article__shared shared">
+                    <ul class="shared__ul">
+                        <li class="shared__li">
+                            <a href="#" target="_blank" rel="nop" class="shared__a">
+                                <i class='shared__i bx bxl-facebook bx-icon'></i>
+                            </a>
+                        </li>
+                        <li class="shared__li">
+                            <a href="#" target="_blank" rel="nop" class="shared__a">
+                                <i class='shared__i bx bxl-pinterest-alt bx-icon'></i>
+                            </a>
+                        </li>
+                        <li class="shared__li">
+                            <a href="#" target="_blank" rel="nop" class="shared__a">
+                                <i class='shared__i bx bxl-whatsapp bx-icon'></i>
+                            </a>
+                        </li>
+                        <li class="shared__li">
+                            <a href="#" target="_blank" rel="nop" class="shared__a">
+                                <i class='shared__i bx bxl-twitter bx-icon'></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
+
         </div>
         <!-- ASIDE -->
         <div class="aside">
@@ -105,7 +107,7 @@
             </div>
 
             <!-- SOCIAL MEDIA -->
-            <div class="follow">
+            <!-- <div class="follow">
                 <h2 class="follow__h2">Our Social Media</h2>
 
                 <div class="follow__container">
@@ -135,7 +137,8 @@
                     </ul>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </div>
+
 </div>

@@ -7,53 +7,60 @@
         <!-- ======= Nav list ======= -->
         <div class="nav__container" #navMenu>
             <ul class="nav__ul">
-                <li class="nav__li"><a href="#" class="nav__a">Collection</a>
 
+                <li class="nav__li"><a routerLink="/" class="nav__a">Home</a></li>
 
-                    <!-- <ul class="dropdown__ul dropdown">
-                        <li class="dropdown__li">
-                            <a href="#" class="dropdown__a">Collectibles</a>
-                            <a href="#" class="dropdown__a">Arts</a>
-                            <a href="#" class="dropdown__a">Photography</a>
-                            <a href="#" class="dropdown__a">Music</a>
-                            <a href="#" class="dropdown__a">Sports</a>
-                            <a href="#" class="dropdown__a">Trading Cards</a>
-                            <a href="#" class="dropdown__a">Virtual Worlds</a>
+                <li class="nav__li nav__li--submenu">
+                    <a data-dropdwon="sub-menu" routerLink="collections" class="nav__a  nav__a--submenu">Collections
+                        <i class='nav__i--arrow bx bx-chevron-down'></i>
+                    </a>
+
+                    <ul class="nav-dropdown">
+                        <li class="nav-dropdown__li">
+                            <a routerLink="collections" class="nav-dropdown__a">Collections</a>
+                            <a href="#" class="nav-dropdown__a">Arts</a>
+                            <a href="#" class="nav-dropdown__a">Photography</a>
+                            <a href="#" class="nav-dropdown__a">Music</a>
+                            <a href="#" class="nav-dropdown__a">Sports</a>
+                            <a href="#" class="nav-dropdown__a">Trading Cards</a>
+                            <a href="#" class="nav-dropdown__a">Virtual Worlds</a>
                         </li>
-                    </ul> -->
+                    </ul>
 
                 </li>
-                <li class="nav__li"><a href="#" class="nav__a">Ranking</a></li>
-                <li class="nav__li"><a href="#" class="nav__a">Sources</a>
 
-                    <ul class="dropdown">
-                        <li class="dropdown__li">
-                            <a routerLink="faqs" routerLinkActive="active" class="dropdown__a">FAQS</a>
-                            <a routerLink="contact" class="dropdown__a">Contact</a>
-                            <a routerLink="blog" class="dropdown__a">Blog</a>
+                <li class="nav__li nav__li--submenu">
+                    <a data-dropdwon="sub-menu" class="nav__a  nav__a--submenu">Sources
+                        <i class='nav__i--arrow bx bx-chevron-down'></i>
+                    </a>
+
+                    <ul class="nav-dropdown">
+                        <li class="nav-dropdown__li">
+                            <a routerLink="faqs" routerLinkActive="active" class="nav-dropdown__a">FAQS</a>
+                            <a routerLink="contact" class="nav-dropdown__a">Contact</a>
+                            <a routerLink="sources/blog" class="nav-dropdown__a">Blog</a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav__li"><a href="#" class="nav__a">Marketplace</a></li>
+
+                <li class="nav__li">
+                    <a href="#" class="nav__a">Marketplace </a>
+                </li>
+                <!-- WALLET -->
+                <div class="nav-wallet">
+
+                    <a href="#" class="nav-wallet__a nav__a" #wallet>My wallet
+                        <i class='bx bxs-wallet-alt nav-wallet__i'></i>
+                    </a>
+                </div>
             </ul>
-
-
-            <!-- <div class="login-mobile">
-                <a href="#" class="login-mobile__a">Login</a>
-                <a href="#" class="login-mobile__a">Register</a>
-            </div> -->
-
-
             <div class="nav__close" id="nav__close" #nav_close (click)="hiddenMenu()">
                 <i class='bx bx-x nav__i'></i>
             </div>
-        </div>
 
-        <!-- Log and register -->
-        <!-- <div class="login-desktop">
-            <a href="#" class="login-desktop__a">Login</a>
-            <a href="#" class="login-desktop__a">Register</a>
-        </div> -->
+
+
+        </div>
 
         <!-- Btn nav -->
         <div class="nav__btns">

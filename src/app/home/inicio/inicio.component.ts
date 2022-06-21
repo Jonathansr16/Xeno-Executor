@@ -1,4 +1,5 @@
-import { Component,  OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component,  Inject,  OnInit } from '@angular/core';
 import { NgwWowService } from 'ngx-wow';
 import { HomedataService, Nft, galleries } from 'src/app/services/homedata.service';
 
@@ -16,12 +17,12 @@ export class InicioComponent implements OnInit {
   nft: Nft[] = [];
   gallery: galleries[] = [];
 
-  constructor(private wowService: NgwWowService, 
+  constructor(@Inject(DOCUMENT) private document: Document, private wowService: NgwWowService, 
     private homeService: HomedataService) { }
 
   ngOnInit(): void {
 
-    this.filterGallery();
+  
 
     this.wowService.init();
 
@@ -52,55 +53,62 @@ export class InicioComponent implements OnInit {
 
       this.nft = this.homeService.getNFT();
       this.gallery = this.homeService.getGalleries();
-  }
-
-  filterGallery() {
-    const filterContainer = document.querySelector<HTMLElement>('.filters');
-    const btnFilters= filterContainer!.children;
-    const totalFilterBtn = btnFilters!.length;
-    const item = document.querySelectorAll("gallery__item");
-    const totalItem = item.length;
-
-   
   
-    for( let i=0; i < totalFilterBtn; i++) 
-    {
-      btnFilters[i].addEventListener("click", function() 
-      {
+ 
+      this.CounterAnimation();
 
-        if(filterContainer) {
-
-          filterContainer.querySelector<HTMLElement>(".active-filter").classList.remove('active-filter');
-        }
-          btnFilters[i].classList.add('active-filter');
-       
-           const filterValue = btnFilters[i].getAttribute('data-filter');
-         
-             for(let k=0; k < totalItem; k++) 
-             {
-   
-               
-               if(filterValue == item[k].getAttribute("data-category")) 
-               {
-                 item[k].classList.remove("hidden");
-                 item[k].classList.add("show");
-                 console.log(filterValue)
-               } else 
-               {
-                 item[k].classList.add("hidden");
-                 item[k].classList.remove("show");
-               }
-               if(filterValue == "All")
-                {
-                 item[k].classList.remove("hidden");
-                 item[k].classList.add("show");
-               }
-             }
-        
-
-    
-      });
+ 
     }
+
+
+  //RECORD
+  CounterAnimation():void {
+    const record = document.querySelectorAll('.benefits-record__h2 .benefits-record__span');
+    const sidebarTitle = document.querySelectorAll<HTMLElement>(".sidebar__container .sidebar__a");
+
+
+    const observer= new IntersectionObserver((entries, obj) => {
+        entries.forEach((entry:any) => {
+            if(entry.isIntersecting) {
+            
+              let target = +entry.target.dataset.number;
+           let number= entry.target;
+           
+
+              setTimeout(() => {
+                this.updateCount(number, target )
+              }, 400);
+            }
+        });
+    }, {
+      threshold: .5,
+      rootMargin: '0px 0px -50% 0px'
+    });
+
+    record.forEach(title => {
+      observer.observe(title)
+    });
+
   }
+
+   updateCount= (num: any, maxNum: number) => {
+    let currentNum = +num.innerText;
+  
+      if(currentNum < maxNum) {
+        num.innerText = currentNum + 1;
+  
+        setTimeout(() => {
+          this.updateCount(num, maxNum);
+      }, 4);
+      }
+  }
+
+
+
+
+
+
+
 
 }
+

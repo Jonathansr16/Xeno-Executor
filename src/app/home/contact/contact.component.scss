@@ -1,68 +1,94 @@
-   /* ============= CONTACT ============= */
-   
-   @use 'mixin';
-   .contact {
-       &__container {
-           margin-top: 10rem;
-           margin-bottom: 3rem;
-       }
-       &__content {
-           @include mixin.grid-box(1.05fr 1fr, 1rem)
-       }
-       &__h2 {
-           color: var(--color-gray);
-           font-weight: var(--font-500);
-           margin-bottom: 1rem;
-       }
-       &__image {
-           overflow: hidden;
-           border-radius: 178px 178px 12px 12px;
-           inset: 0;
-           margin: auto;
-           width: 390px;
-           height: 601px;
-           box-shadow: 0 16px 32px hsla(228, 66%, 25%, .25);
-       }
-       &-cards {
-           display: grid;
-           grid-template-columns: 190px 190px;
-           grid-template-rows: 190px 190px;
-           justify-content: center;
-           column-gap: 2.5rem;
-           row-gap: 40px;
-       }
-       &-card {
-           background-color: var(--back-card);
-           padding: 1.25rem .75rem;
-           border-radius: .5rem;
-           transition: .3s;
-           box-shadow: 0 10px 10px hsl(0deg 0% 0% / 5%);
-           &__p {
-               font-weight: var(--font-400);
-               font-size: 1rem;
-               margin-top: 1rem;
-               letter-spacing: 0.3px;
-               text-align: center;
-               color: var(--color-text);
-           }
-       }
-       &-info {
-           display: flex;
-           align-items: flex-start;
-           column-gap: .75rem;
-           margin-bottom: 1.25rem;
-           &__i {
-               padding: 6px;
-               background-color: hsl(228, 100%, 97%);
-               /*back first-color-lighten , color, first-color*/
-               border-radius: 6px;
-               font-size: 1.25rem;
-               color: hsl(228, 66%, 53%);
-           }
-           &__h3 {
-               font-size: var(--h3-font-size);
-               color: var(--color-gray);
-               font-weight: var(--font-600);
-           }
-       }
-   }
+/* ============= CONTACT ============= */
+
+@use 'mixin';
+.contact {
+    &__container {
+        margin-top: 10rem;
+        margin-bottom: 3rem;
+    }
+    &-title {
+        &__h2 {
+            font-weight: var(--font-500);
+            margin-bottom: 1rem;
+        }
+    }
+    &__content {
+        @include mixin.grid-box(1.05fr 1fr, 1rem)
+    }
+    &-image {
+        &__img {
+            overflow: hidden;
+            border-radius: 178px 178px 12px 12px;
+            margin: auto;
+            width: 70%;
+            height: 100%;
+            box-shadow: 0 16px 32px hsla(228, 66%, 25%, .25);
+        }
+    }
+    &-right {
+        &__span,
+        &__h2 {
+            padding: 1rem;
+        }
+        &__p {
+            color: var(--color-text);
+            margin-left: 1rem;
+            padding-bottom: 1em;
+        }
+    }
+    &-cards {
+        display: grid;
+        grid-template-columns: 190px 190px;
+        grid-template-rows: 190px 190px;
+        justify-content: center;
+        column-gap: 2.5rem;
+        row-gap: 40px;
+    }
+    &-card {
+        background-color: var(--back-card);
+        padding: 1.25rem .75rem;
+        border-radius: .5rem;
+        transition: .3s;
+        box-shadow: 0 10px 10px hsl(0deg 0% 0% / 5%);
+        &__p {
+            font-weight: var(--font-400);
+            font-size: 1rem;
+            margin-top: 1rem;
+            letter-spacing: 0.3px;
+            text-align: center;
+            color: var(--color-text);
+        }
+    }
+    &-info {
+        display: flex;
+        align-items: flex-start;
+        column-gap: .75rem;
+        margin-bottom: 1.25rem;
+        &__i {
+            padding: 6px;
+            background-color: hsl(228, 100%, 97%);
+            /*back first-color-lighten , color, first-color*/
+            border-radius: 6px;
+            font-size: 1.25rem;
+            color: hsl(228, 66%, 53%);
+        }
+        &__h3 {
+            font-weight: var(--font-600);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        &__content {
+            grid-template-columns: 1fr;
+        }
+        // &-cards {
+        //     grid-template-columns: 150px 150px;
+        //     grid-template-rows: 150px 150px;
+        //     margin: 2.5rem 0 0 0;
+        //     column-gap: 2rem;
+        //     row-gap: 80px;
+        // }
+    }
+}

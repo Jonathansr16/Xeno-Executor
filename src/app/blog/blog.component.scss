@@ -9,7 +9,7 @@
 
 /* ============= BLOG ============= */
 
-.blog__container {
+.article {
     @include mixin.grid-box(5fr 2fr, 60px);
 }
 

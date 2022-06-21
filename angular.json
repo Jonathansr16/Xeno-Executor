@@ -33,6 +33,7 @@
                         ],
                         "styles": [
                             "src/styles.scss"
+
                         ],
                         "scripts": [
                             "node_modules/wowjs/dist/wow.js"

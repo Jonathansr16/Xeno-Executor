@@ -1,0 +1,144 @@
+<!-- ============= HERO BLOG ============= -->
+<div class="hero  banner__blog">
+    <div class="hero__container container">
+        <div class="hero__title">
+            <h1 class="hero__h1">Breaking news</h1>
+        </div>
+
+        <div class="hero__content">
+            <ul class="hero__ul">
+                <li class="hero__li"><a routerLink="/" class="hero__a">Home</a>
+                    <i class='hero__i bx bx-chevron-right bx-icon'></i>
+                    <span class="hero__span">Frequently Asked Questions</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="blog">
+
+    <div class="blog__container container">
+        <!-- ARTICLES -->
+        <h2 class="article__h2">Latest Blog Post</h2>
+        <div class="article">
+            <div class="article__group">
+
+                <ng-container class="article__container">
+
+                    <div class="article__card" *ngFor="let posts of posts$">
+
+                        <div class="article__img">
+                            <img [src]="posts.fields.img.fields.file.url" class="article__img--card" alt="">
+                        </div>
+
+                        <div class="wrapper">
+                            <span class="wrapper__topic">{{ posts.fields.category }}</span>
+
+                            <h3 class="wrapper__h3">
+                                <a [routerLink]="['article',posts.sys.id]" class="wrapper__a"> {{posts.fields.title}}</a>
+                            </h3>
+
+                            <p class="wrapper__p wrapper__desc">{{posts.fields.content | slice: 6:158 }}</p>
+
+                            <div class="wrapper__flex">
+                                <div class="wrapper__author">
+                                    <img src="assets/img/author.png" alt="" class="wrapper__author--img">
+                                </div>
+
+                                <div class="wrapper__details">
+                                    <span class="wrapper__details--span">{{posts.fields.author}}</span>
+
+                                    <p class="wrapper__datail">
+                                        <time class="wrapper__time" datatime="article.date">{{posts.fields.date | date: 'mediumDate'}}</time>
+                                        <span class="separator"></span>
+                                        <i class='wrapper__i bx bxs-calendar'></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <!-- ASIDE -->
+            <div class="aside">
+                <!-- TOPICS -->
+                <div class="topics">
+                    <h2 class="topics__h2">Topics</h2>
+
+                    <div class="topics__btn">
+                        <div class="topics__icon">
+                            <i class='topics__i bx bx-calendar'></i>
+                        </div>
+                        <p class="topics__p">Most popular</p>
+                    </div>
+
+                    <div class="topics__btn">
+                        <div class="topics__icon">
+                            <i class='topics__i bx bx-ghost'></i>
+                        </div>
+                        <p class="topics__p">NFT</p>
+                    </div>
+
+                    <div class="topics__btn">
+                        <div class="topics__icon">
+                            <i class='topics__i bx bx-coin-stack'></i>
+                        </div>
+                        <p class="topics__p">Criptocurrencies</p>
+                    </div>
+
+
+                </div>
+                <!-- TAGS -->
+                <div class="tags">
+                    <h2 class="tags__h2">Tags</h2>
+
+                    <div class="tags__container">
+                        <button class="tags__hashtag">#NFT</button>
+                        <button class="tags__hashtag">#Ethereum</button>
+                        <button class="tags__hashtag">#Cryptocurrency</button>
+                        <button class="tags__hashtag">#Bitcoin</button>
+                        <button class="tags__hashtag">#Tesla</button>
+                        <button class="tags__hashtag">#MANA</button>
+                        <button class="tags__hashtag">#Tether</button>
+                        <button class="tags__hashtag">#USD coin</button>
+                    </div>
+                </div>
+
+                <!-- SOCIAL MEDIA -->
+                <div class="follow">
+                    <h2 class="follow__h2">Our Social Media</h2>
+
+                    <div class="follow__container">
+                        <p class="follow__p">
+                            Don't forget to follow us on our social media
+                        </p>
+
+                        <ul class="follow__ul">
+                            <li class="follow__li">
+                                <a href="#" class="follow__a">
+                                    <i class="follow__i bx bxl-facebook"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="follow__a">
+                                    <i class='follow__i bx bxl-twitter'></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="follow__a">
+                                    <i class='follow__i bx bxl-instagram-alt'></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

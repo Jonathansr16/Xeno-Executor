@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //COMPONENTS
-import { ArticleComponent } from './article/article.component';
 import { NopagesfoundComponent } from './nopagesfound/nopagesfound.component';
+import { ContentfulService } from '../services/contentful.service';
+
+
+import { MarkdownPipe } from '../pipes/markdown.pipe';
 
 @NgModule({
   declarations: [
-    ArticleComponent,
-    NopagesfoundComponent,
+ 
+    NopagesfoundComponent
+ 
   ],
   imports: [
     CommonModule,
-    
+
   ],
   exports: [
-    ArticleComponent,
     NopagesfoundComponent
+  ],
+  providers:[ 
+    ContentfulService
   ]
 })
 export class ComponentsModule { }

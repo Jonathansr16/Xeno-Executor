@@ -1,0 +1,53 @@
+<section class="collections">
+    <div class="collections__container container">
+        <h2 class="collections__title">Explore Collections</h2>
+
+
+        <ul class="collections__ul">
+            <li class="collections__li">
+                <a href="#" class="collections__a collections__a--active">All</a>
+            </li>
+            <li class="collections__li">
+                <a href="#" class="collections__a">Art</a>
+            </li>
+            <li class="collections__li">
+                <a href="#" class="collections__a">Collectibles</a>
+            </li>
+            <li class="collections__li">
+                <a href="#" class="collections__a">Music</a>
+            </li>
+            <li class="collections__li">
+                <a href="#" class="collections__a">Photography</a>
+            </li>
+            <li class="collections__li">
+                <a href="#" class="collections__a">Sports</a>
+            </li>
+            <li class="collections__li">
+                <a href="#" class="collections__a">Trading Card</a>
+            </li>
+        </ul>
+
+        <div class="collection">
+
+            <div class="collection__item" *ngFor="let item of data">
+                <div class="collection__light"></div>
+                <span class="collection__category">{{ item.category }}</span>
+                <div class="collection__img">
+                    <figure class="collection__figure">
+                        <img [src]="item.img" class="collection__img" alt="">
+                    </figure>
+                </div>
+                <!-- Collections details  -->
+                <div class="collection__details">
+                    <h3 class="collection__h3"> {{ item.title }} </h3>
+
+                    <span class="collection__span">
+                        Owned by 
+                        <p class="collection__span-p"> {{ item.author }} </p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -174,7 +174,32 @@ export class HomedataService {
       price: 444,
       icon: "assets/img/solana-icon.svg",
       link: "https://opensea.io/collection/boryoku-dragonz"
-    }   
+    },
+
+    {
+      id: 5,
+      category: "Music",
+      authorImg: "assets/img/author_nft4.gif",
+      author: "Snoop Dogg on Sound XYZ",
+      img: "assets/img/music.jpg",
+      title: "Death Row Session: Vol. 2 (420 Edition) #864",
+      price: 444,
+      icon: "assets/img/solana-icon.svg",
+      link: "https://opensea.io/collection/boryoku-dragonz"
+    },
+
+    {
+      id: 6,
+      category: "Sport",
+      authorImg: "assets/img/author_nft4.gif",
+      author: "McLaren MSO LAB Genesis",
+      img: "assets/img/sport.png",
+      title: "MSO LAB Genesis #1387",
+      price: 444,
+      icon: "assets/img/solana-icon.svg",
+      link: "https://opensea.io/collection/boryoku-dragonz"
+    }
+
   ];
 
   constructor() { }

@@ -38,6 +38,15 @@
     --card-padding: 1.9rem 0.95rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-gray);
+}
+
 h1 {
     font-size: var(--h1-font-size);
 }
@@ -48,6 +57,10 @@ h2 {
 
 h3 {
     font-size: var(--h3-font-size);
+}
+
+a {
+    color: var(--color-gray);
 }
 
 

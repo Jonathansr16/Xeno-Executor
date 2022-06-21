@@ -5,18 +5,18 @@ import { RouterModule } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { ContactComponent } from './contact/contact.component';
-import { BlogComponent } from './blog/blog.component';
+
 
 @NgModule({
   declarations: [
     InicioComponent,
     FaqsComponent,
     ContactComponent,
-    BlogComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+
   ]
 })
 export class HomeModule { }

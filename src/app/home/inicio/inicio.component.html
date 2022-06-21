@@ -18,12 +18,12 @@
                             <p class="home-record__title">Artworks</p>
                         </div>
 
-                        <div class="home-record">
+                        <div class="home-record__item">
                             <p class="home-record__number">20k+</p>
                             <p class="home-record__title">Artist</p>
                         </div>
 
-                        <div class="home-record">
+                        <div class="home-record__item">
                             <p class="home-record__number">99k+</p>
                             <p class="home-record__title">Aucations</p>
                         </div>
@@ -32,7 +32,9 @@
                 </div>
 
                 <div class="home-right wow animate__animated animate__fadeInUp">
-                    <img src="assets/img/heroimage.png" class="home-right__img float" alt="">
+                    <figure>
+                        <img src="assets/img/heroimage.png" class="home-right__img float" alt="">
+                    </figure>
                 </div>
             </div>
         </div>
@@ -109,7 +111,9 @@
                                 <span> {{i +1}} </span>
 
                                 <span class="top__span--img">
-                                <img [src]="nft.collection_img" class="top__img--author" alt="">
+                                    <figure class="top__figure">
+                                        <img [src]="nft.collection_img" class="top__img--author" alt="">
+                                    </figure>
                                </span>
 
                                 <span> {{ nft.collection_auth }}  </span>
@@ -117,7 +121,9 @@
                             </td>
                             <td data-label="VOLUME" class="top__td">
                                 <span>
-                                    <img [src]="nft.volume_img" class="top__img--eth" alt="">
+                                    <figure class="top-figure">
+                                        <img [src]="nft.volume_img" class="top-volume__img" alt="">
+                                    </figure>
                                 </span>
 
                                 <span>
@@ -130,7 +136,11 @@
                             </td>
 
                             <td data-label="FLOOR PRICE" class="top__td">
-                                <span> <img [src]="nft.volume_img" class="top__img--eth" alt=""></span>
+                                <span>
+                                  <figure class="top-figure">
+                                      <img [src]="nft.volume_img" class="top-price__img" alt="">      
+                                 </figure>
+                               </span>
                                 <span> {{ nft.price }} </span>
                             </td>
 
@@ -151,7 +161,9 @@
         <div class="meaning__container container">
 
             <div class="mleft  wow animate__animated animate__fadeInDown">
-                <img src="assets/img/Bitcoin P2P-amico.svg" class="mleft__img" alt="currency digital, bitcoin" loading="lazy">
+                <figure>
+                    <img src="assets/img/Bitcoin P2P-amico.svg" class="mleft__img" alt="currency digital, bitcoin" loading="lazy">
+                </figure>
             </div>
 
             <div class="mright wow animate__animated animate__fadeInUp">
@@ -220,7 +232,9 @@
             </div>
 
             <div class="features-right wow animate__animated animate__fadeInDown">
-                <img src="assets/img/Online gallery-pana.svg" width="392" height="258" alt="important features of the App " class="features-right__img" loading="lazy ">
+                <figure>
+                    <img src="assets/img/Online gallery-pana.svg" width="392" height="258" alt="important features of the App " class="features-right__img" loading="lazy ">
+                </figure>
             </div>
 
         </div>
@@ -244,25 +258,25 @@
                 <div class="benefits-record">
                     <!-- record item-->
                     <div class="benefits-record__item">
-                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="100">0</span>+</h2>
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-number="100">0</span>+</h2>
                         <h5 class="benefits-record__h5">Countries supported</h5>
                     </div>
 
                     <!-- record item-->
                     <div class="benefits-record__item">
-                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="30">0</span>+</h2>
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-number="30">0</span>+</h2>
                         <h5 class="benefits-record__h5">Criptocurrencies</h5>
                     </div>
 
                     <!-- record item-->
                     <div class="benefits-record__item">
-                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="400">0</span>+</h2>
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-number="400">0</span>+</h2>
                         <h5 class="benefits-record__h5">thousand users trust us</h5>
                     </div>
 
                     <!-- record item-->
                     <div class="benefits-record__item">
-                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-target="70">0</span>+</h2>
+                        <h2 class="benefits-record__h2"><span class="benefits-record__span" data-number="70">0</span>+</h2>
                         <h5 class="benefits-record__h5">payments using crypto</h5>
                     </div>
                 </div>
@@ -383,49 +397,42 @@
             <div class="products__header wow animate__animated animate__fadeInUp">
                 <h3 class="products__h3 head">PRODUCTS </h3>
                 <h2 class="products__h2">Convert to NFT your digital assets </h2>
+                <a routerLink="collections" class="products__a">Explore Now
+                    <i class='bx bx-right-arrow-alt products__a-i'></i>
+                </a>
             </div>
-            <!-- button filter -->
-            <div class="filters" #filter>
-                <button class="filters__btn active-filter" data-filter="All">All</button>
-                <button class="filters__btn" data-filter="Art">Art</button>
-                <button class="filters__btn" data-filter="Collectible">Collectible</button>
-                <button class="filters__btn" data-filter="Photography">Photography</button>
-                <button class="filters__btn" data-filter="Virtual-World">Virtual World</button>
-            </div>
+
 
             <div class="gallery">
 
                 <!-- gallery item -->
-                <div *ngFor="let item of gallery" class="gallery__item" data-category="item.category">
+                <div *ngFor="let item of gallery | slice: 0:4" class="gallery__item" data-category="item.category">
+                    <div class="gallery__light"></div>
                     <!-- gallery img -->
-
-                    <img [src]="item.img" class="gallery__img" alt="">
+                    <figure>
+                        <img [src]="item.img" class="gallery__img" alt="">
+                    </figure>
                     <div class="gallery__img--auth">
-                        <img [src]="item.authorImg" class="gallery__img--auth" alt="">
+                        <figure>
+                            <img [src]="item.authorImg" class="gallery__img--auth" alt="">
+                        </figure>
                     </div>
                     <div class="gallery__term"> {{ item.category }} </div>
                     <!-- ===== details  ===== -->
-                    <div class="gallery__detail">
-                        <div class="gallery__author">
-                            <p class="gallery__auth">by {{ item.author }}</p>
-                            <h5 class="gallery__title"> {{ item.title }} </h5>
-                        </div>
+                    <h3 class="gallery__title"> {{ item.title }}</h3>
 
-                        <div class="gallery_price">
-                            <p class="gallery__p">price</p>
-                            <span class="gallery__span">
-                            <img [src]="item.icon" class="gallery__icon" alt="">
-                            <h5 class="gallery__title">{{ item.price }}</h5>
-                        </span>
-                        </div>
+                    <span class="gallery__author">
+                        Owned By 
+                        <p class="gallery__author-p"> {{ item.author }}</p>
+                    </span>
+
+                    <div class="gallery__price">
+                        <data class="gallery__price-data"> {{ item.price }} ETH </data>
+                        <figure class="gallery__price-figure">
+                            <img [src]="item.icon" class="gallery__price-img" alt="">
+                        </figure>
                     </div>
-
-                    <div class="gallery__read">
-                        <a class="btn-default btn" [href]="item.link" target="_blank" rel="no-referrer noopener">Read more</a>
-                    </div>
-
                 </div>
-
             </div>
 
         </div>
