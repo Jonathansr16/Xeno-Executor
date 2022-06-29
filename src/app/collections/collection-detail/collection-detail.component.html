@@ -1,1 +1,92 @@
-<p>collection-detail works!</p>
+<section class="c-detail">
+
+    <div class="c-detail__banner container">
+
+        <div class="author">
+            <figure class="author__figure">
+                <img [src]="collection.authorImg" class="author__img" alt="">
+            </figure>
+
+            <div class="author_details">
+                <h5 class="author__h5">{{ collection.author }}
+                    <i class='bx bxs-badge-check author__i'></i>
+                </h5>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="auth-filters container">
+
+        <div class="auth-items">
+            <p class="auth-items__p">ITEMS:</p>
+            <p class="auth-items__p">220</p>
+        </div>
+
+        <div class="auth-menu">
+
+            <div class="auth-menu__a" (click)="authDropdown()">Price low to high
+                <i class='bx bx-chevron-down auth-menu__i'></i>
+            </div>
+
+            <ul class="auth-dropdown__ul auth-dropdown" [ngClass]="{ 'auth-dropdown-activo' : active }">
+                <li class="auth-dropdown__li">
+                    <a href="#" class="auth-dropdown__a">Price high to low</a>
+                    <a href="#" class="auth-dropdown__a">Most view</a>
+                    <a href="#" class="auth-dropdown__a">Ending soon</a>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+    <div class="author-collection collection__container container">
+
+        <div class="collection" *ngFor="let item of authCollection; let i =index">
+
+            <div class="collection-nft">
+                <div class="collection-category">{{ item.category }}</div>
+                <figure class="collection-nft__figure">
+                    <img [src]="item.img" class="collection-nft__img" alt="">
+                </figure>
+            </div>
+
+            <div class="collection__content">
+                <div class="collection-title">
+                    <h3 class="collection-title__h3"> {{ item.title }}</h3>
+                </div>
+
+                <div class="collection-info-wrapper">
+                    <div class="collection-author">
+                        <figure class="collection-author__figure">
+                            <img [src]="item.authorImg" class="collection-author__img" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="collection-info">
+                        <div class="collection-details">
+                            <h6 class="collection-details__h6">Created By</h6>
+                            <p class="collection-details__p">{{ item.author }}</p>
+                        </div>
+
+                        <div class="collection-prices">
+                            <h6 class="collection-prices__h6"> {{ item.price }}</h6>
+                            <figure class="collection-prices__figure">
+                                <img [src]="item.icon" alt="" class="collection-prices-img">
+                            </figure>
+                            <p class="collection-prices__p">ETH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a [routerLink]="['/collections/', i]" class="btn btn-default collection__btn"> Buy now
+                <i class='bx bxs-basket collection__i'></i>
+            </a>
+        </div>
+
+    </div>
+
+
+
+</section>

@@ -10,16 +10,16 @@ import { DOCUMENT } from '@angular/common';
 
 export class NavbarComponent implements OnInit {
 
-  //NAVBAR
-@ViewChild('navToggle') toggle?: ElementRef;
-@ViewChild('navMenu') navMenu?: ElementRef;
-@ViewChild('nav_close') nav_close?: ElementRef;
+
+  public navActive: boolean;
+  public themeActive: boolean;
+  
+
 @ViewChild('header') header?: ElementRef;
 @ViewChild('wallet') wallet?: ElementRef;
-//THEME
-@ViewChild('themeCard') themeCard?: ElementRef;
+
 @ViewChild('themeBtn') themeBtn?: ElementRef;
-@ViewChild('btnmodal') modalbtn?: ElementRef;
+
  
 
 constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2) { 
@@ -33,30 +33,28 @@ constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Ren
     this.changeFontSize();
 
     this.dropdown();
+ 
   }
 
-
-
-  openTheme():void {   
-
-     const btn = this.themeBtn?.nativeElement;
-     const card= this.themeCard?.nativeElement;
-
-     if(btn) {
-       
-       this.renderer2.setStyle(card, 'display', 'grid');
-  }}
-
-
-  closeModal(): void {
-    const btn = this.modalbtn?.nativeElement;
-     const card= this.themeCard?.nativeElement;
-
-  
-      if(btn) {
-        this.renderer2.setStyle(card, 'display', '');
-     }
+  /* =========== OPEN NAV =========== */
+  openNav():void {
+    this.navActive= true;
   }
+
+  /* =========== CLOSE NAV =========== */
+  closeNav():void {
+    this.navActive= false; 
+  }
+
+  /* =========== OPEN BTN THEME =========== */
+openTheme():void {
+  this.themeActive= true;
+}
+
+  /* =========== CLOSE BTN THEME =========== */
+closeTheme():void {
+  this.themeActive= false;
+}
 
   /* =========== CUSTOM FONT SIZE =========== */
 removeFontSelector():void {
@@ -168,57 +166,35 @@ removeFontSelector():void {
  }
 
 
- /* =========== SHOW MENU BAR =========== */
-  showMenu(): void {
-
- const  toggleNav = this.toggle?.nativeElement;
- const  menu = this.navMenu?.nativeElement;
- 
-  if(toggleNav) {
-      this.renderer2.addClass(menu, 'nav__show');
-  } 
-  }
-
-  /* =========== HIDDEN MENU BAR =========== */
-  hiddenMenu(): void {
-  const close = this.nav_close?.nativeElement;
-  const  menu = this.navMenu?.nativeElement;
-  if(close) {
-    this.renderer2.removeClass(menu, "nav__show");
-  }
-  }
+  /* =========== DROPDOWN =========== */
 
 
-    /* =========== HIDDEN MENU BAR =========== */
-
-  dropdown():void {
+    dropdown():void {
   
-    const option = this.document.querySelectorAll(".nav__a--submenu");
-    const mediaSize: number = 768;
-
-    for(let i=0; i<option.length; i++) {
-      option[i].addEventListener("click", function(this: any) {
-       //only responsive
-        if(window.innerWidth <= mediaSize) {
-            const submenu= this.nextElementSibling;
-            const height = submenu.scrollHeight;
-
-            if(submenu.classList.contains("d-show")) {
-              submenu.classList.remove("d-show");
-              submenu.removeAttribute("style");
-            } else {
-              submenu.classList.add('d-show');
-              submenu.style.height = height + "px"
-            }
-        }
-      });
+      const option = this.document.querySelectorAll(".nav__a--submenu");
+      const mediaSize: number = 768;
+  
+      for(let i=0; i<option.length; i++) {
+        option[i].addEventListener("click", function(this: any) {
+         //only responsive
+          if(window.innerWidth <= mediaSize) {
+              const submenu= this.nextElementSibling;
+              const height = submenu.scrollHeight;
+  
+              if(submenu.classList.contains("d-show")) {
+                submenu.classList.remove("d-show");
+                submenu.removeAttribute("style");
+              } else {
+                submenu.classList.add('d-show');
+                submenu.style.height = height + "px"
+              }
+          }
+        });
+      }
     }
-  }
+  
 
-  collapseSubMEnu(): void {
-  const nav=  this.navMenu.nativeElement.querySelector("nav__li--submenu.active");
-  this.renderer2.removeClass(nav, "active" );
-  }
+ 
 }
 
 

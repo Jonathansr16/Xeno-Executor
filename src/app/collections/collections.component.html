@@ -1,6 +1,18 @@
 <section class="collections">
-    <div class="collections__container container">
+
+    <div class="collections__banner container">
+
+    </div>
+
+    <div class="container">
         <h2 class="collections__title">Explore Collections</h2>
+
+        <div class="collections__search">
+            <i class='collections__search-i bx bx-search-alt-2'></i>
+            <input class="collections__search-input" required type="text">
+            <label for="" class="collections__search-label">Search by collection, NFT or USER</label>
+        </div>
+
 
 
         <ul class="collections__ul">
@@ -27,27 +39,49 @@
             </li>
         </ul>
 
-        <div class="collection">
+        <div class="collection__container">
 
-            <div class="collection__item" *ngFor="let item of data">
-                <div class="collection__light"></div>
-                <span class="collection__category">{{ item.category }}</span>
-                <div class="collection__img">
-                    <figure class="collection__figure">
-                        <img [src]="item.img" class="collection__img" alt="">
+            <div class="collection" *ngFor="let item of data; let i =index">
+
+                <div class="collection-nft">
+                    <div class="collection-category">{{ item.category }}</div>
+                    <figure class="collection-nft__figure">
+                        <img [src]="item.img" class="collection-nft__img" alt="">
                     </figure>
                 </div>
-                <!-- Collections details  -->
-                <div class="collection__details">
-                    <h3 class="collection__h3"> {{ item.title }} </h3>
 
-                    <span class="collection__span">
-                        Owned by 
-                        <p class="collection__span-p"> {{ item.author }} </p>
-                    </span>
+                <div class="collection__content">
+                    <div class="collection-title">
+                        <h3 class="collection-title__h3"> {{ item.title }}</h3>
+                    </div>
+
+                    <div class="collection-info-wrapper">
+                        <div class="collection-author">
+                            <figure class="collection-author__figure">
+                                <img [src]="item.authorImg" class="collection-author__img" alt="">
+                            </figure>
+                        </div>
+
+                        <div class="collection-info">
+                            <div class="collection-details">
+                                <h6 class="collection-details__h6">Created By</h6>
+                                <p class="collection-details__p">{{ item.author }}</p>
+                            </div>
+
+                            <div class="collection-prices">
+                                <h6 class="collection-prices__h6"> {{ item.price }}</h6>
+                                <figure class="collection-prices__figure">
+                                    <img [src]="item.icon" alt="" class="collection-prices-img">
+                                </figure>
+                                <p class="collection-prices__p">ETH</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <a [routerLink]="['/collections/', i]" class="btn btn-default collection__btn"> Buy now
+                    <i class='bx bxs-basket collection__i'></i>
+                </a>
             </div>
         </div>
-
     </div>
 </section>

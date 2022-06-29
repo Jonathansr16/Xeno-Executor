@@ -137,12 +137,12 @@
             font-weight: var(--font-500);
         }
         &__a.custom-a {
-            border: 2px solid var(--color-primary);
+            background-color: var(--color-primary);
             transition: border .3s ease;
         }
         &__i {
             margin: 0 .25rem;
-            color: var(--color-primary);
+            color: #f9fbff;
         }
     }
     &__btns {
@@ -176,8 +176,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    height: 100vh;
-    width: 100vw;
+    height: 0;
+    width: 0;
     top: 0;
     left: 0;
     z-index: 2000;
@@ -190,6 +190,11 @@
     h5,
     h6 {
         color: var(--color-gray);
+    }
+    &-active {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
     }
     &__p {
         color: var(--color-gray);
@@ -339,21 +344,30 @@
 @media screen and (max-width: 768px) {
     .nav {
         height: var(--header-height);
+        &__a {
+            color: #FFF;
+        }
         &__ul {
             flex-direction: column;
             row-gap: 1.5rem;
         }
         &__container {
             position: fixed;
+            overflow: hidden;
             background: linear-gradient(113.49deg, #984D38 -30.3%, #181E41 58.12%);
-            width: 80%;
+            width: 0;
             height: 100%;
             top: 0;
             right: -100%;
-            padding: 4rem 0 0 3rem;
             border-radius: 1rem 0 0 1rem;
             z-index: 100;
             transition: .3s;
+            &-active {
+                width: 80%;
+                right: 0;
+                transition: all 0.9s ease;
+                padding: 4rem 0 0 3rem;
+            }
         }
         //DROPDOWN
         &__i--arrow {
@@ -373,13 +387,11 @@
             padding: 0;
             height: 0;
             overflow: hidden;
+            opacity: 1;
+            visibility: visible;
             &__a {
                 padding: 12px 15px;
             }
-        }
-        &__show {
-            right: 0;
-            transition: all 0.9s ease;
         }
         &__close,
         &__toggle,

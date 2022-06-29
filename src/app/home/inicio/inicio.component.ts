@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component,  Inject,  OnInit } from '@angular/core';
 import { NgwWowService } from 'ngx-wow';
-import { HomedataService, Nft, galleries } from 'src/app/services/homedata.service';
+import { HomedataService, Nft, gallery } from '@services/homedata.service';
 
 // @ts-ignore
 import Typewriter from 't-writer.js';
@@ -15,7 +15,7 @@ export class InicioComponent implements OnInit {
 
   
   nft: Nft[] = [];
-  gallery: galleries[] = [];
+  gallery: gallery[] = [];
 
   constructor(@Inject(DOCUMENT) private document: Document, private wowService: NgwWowService, 
     private homeService: HomedataService) { }

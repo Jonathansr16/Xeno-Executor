@@ -111,3 +111,14 @@
         line-height: 35px;
     }
 }
+
+
+/* ============= RESPONSIVE BLOG ============ */
+
+@media screen and (max-width: 768px) {
+    .articles {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
+}

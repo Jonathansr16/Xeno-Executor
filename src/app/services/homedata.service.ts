@@ -127,76 +127,82 @@ export class HomedataService {
  
   ];
 
-  private gallery: galleries[] = [
+  private galleries: gallery[] = [
     {
-      id: 1,
+    
+      url: "toomuchlag",
       category: "Art",
       authorImg: "assets/img/author_nft-1.jpg",
       author: "toomuchlag",
       img: "assets/img/nfts_2.jpg",
       title: "Spirit / Hero",
-      price: 0.05,
+      price: 0.04,
       icon: "assets/img/ethereum-icon.png",
       link: "https://opensea.io/collection/le-anime-by-toomuchlag"
     },
 
     {
-      id: 2,
+    
       category: "Collectible",
+      url: "ALTAVA-Second-Skin",
       authorImg: "assets/img/author_nft-2.png",
       author: "ALTAVA Second Skin",
       img: "assets/img/nft_collectible.png",
-      title: "Second Skin",
-      price: 0.05,
+      title: "Second Skin #704",
+      price: 0.95,
       icon: "assets/img/ethereum-icon.png",
       link: "https://opensea.io/collection/altava-second-skin-metamorphosis"
     },
 
     {
-      id: 3,
+   
       category: "Photography",
+      url: "The-Dark-Days",
       authorImg: "assets/img/author_nft3.gif",
-      author: "toomuchlag",
+      author: "The Dark Days",
       img: "assets/img/nft_photography.jpg",
       title: "#16 Hidra",
-      price: 4.8,
+      price: 0.5,
       icon: "assets/img/ethereum-icon.png",
       link: "https://opensea.io/collection/the-dark-days"
     },
 
     {
-      id: 4,
+    
       category: "Virtual World",
+      url: 'Boryoku-Dragonz',
       authorImg: "assets/img/author_nft4.gif",
       author: "Boryoku Dragonz",
       img: "assets/img/nft_vitual-world.png",
       title: "Boryoku Dragonz #724",
-      price: 444,
+      price: 222,
       icon: "assets/img/solana-icon.svg",
       link: "https://opensea.io/collection/boryoku-dragonz"
     },
 
     {
-      id: 5,
+     
       category: "Music",
+      url: 'Snoop-Dogg-on-Sound-XYZ',
       authorImg: "assets/img/author_nft4.gif",
       author: "Snoop Dogg on Sound XYZ",
       img: "assets/img/music.jpg",
       title: "Death Row Session: Vol. 2 (420 Edition) #864",
-      price: 444,
-      icon: "assets/img/solana-icon.svg",
+      price: 0.074,
+      icon: "assets/img/ethereum-icon.png",
       link: "https://opensea.io/collection/boryoku-dragonz"
     },
 
     {
-      id: 6,
+   
       category: "Sport",
+      url: 'McLaren-MSO-LAB-Genesis',
       authorImg: "assets/img/author_nft4.gif",
       author: "McLaren MSO LAB Genesis",
       img: "assets/img/sport.png",
       title: "MSO LAB Genesis #1387",
-      price: 444,
-      icon: "assets/img/solana-icon.svg",
+      price: 0.31,
+      icon: "assets/img/ethereum-icon.png",
       link: "https://opensea.io/collection/boryoku-dragonz"
     }
 
@@ -208,8 +214,13 @@ export class HomedataService {
     return this.nfts;
   }
 
-  getGalleries(): galleries[] {
-    return this.gallery;
+
+ getGallery(id: number) {
+    return this.galleries[id]
+ }
+
+  getGalleries(): gallery[] {
+    return this.galleries;
   }
   
 }
@@ -229,8 +240,8 @@ export interface Nft {
   items: string;
 }
 
-export interface galleries {
-  id?: number;
+export interface gallery {
+  url?: string;
   category: string;
   authorImg: string;
   author: string;
@@ -239,4 +250,5 @@ export interface galleries {
   price: number;
   icon: string;
   link: string;
+  id?: string;
 }

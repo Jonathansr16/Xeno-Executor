@@ -8,8 +8,8 @@ import { NftDetailComponent } from './nft-detail/nft-detail.component';
 
 const collections: Routes = [
     { path: 'collections', component: CollectionsComponent },
-    { path: 'collections:/id', component: CollectionDetailComponent },
-    { path: 'collectoins:/id:/idNft', component: NftDetailComponent },
+    { path: 'collections/:id', component: CollectionDetailComponent },
+    { path: 'collectoins/:id/:idNft', component: NftDetailComponent },
     
 ];
 

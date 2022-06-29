@@ -24,7 +24,7 @@ h3 {
 }
 
 .article {
-    order: 2;
+    order: 3;
     &__h2 {
         line-height: 1.3;
         margin-bottom: 3rem;
@@ -151,12 +151,6 @@ h3 {
     .blog__container {
         grid-template-columns: 1fr
     }
-    .article {
-        order: 4;
-    }
-    .aside {
-        order: 3;
-    }
     .follow {
         display: none;
     }
@@ -179,5 +173,21 @@ h3 {
         &__card {
             grid-template-columns: 1fr;
         }
+    }
+}
+
+
+/* ============= RESPONSIVE BLOG ============ */
+
+@media screen and (max-width: 768px) {
+    .article {
+        grid-template-columns: 1fr;
+    }
+    .article {
+        order: 12;
+    }
+    .aside {
+        margin-top: 2rem;
+        order: -1;
     }
 }

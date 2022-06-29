@@ -1,0 +1,110 @@
+@use 'mixin';
+.c-detail {
+    &__banner {
+        margin: 7rem 4rem;
+        background-image: url('/assets/img/banner-details.webp');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 540px;
+        position: relative;
+    }
+}
+
+.author {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    &__figure {
+        width: 200px;
+        height: 200px;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        bottom: -100px;
+        overflow: hidden;
+        left: 0;
+    }
+    &__h5 {
+        padding: 0 0.50rem;
+        font-size: 2.5rem;
+    }
+    &__i {
+        color: rgb(32, 129, 226);
+    }
+}
+
+.author-collection {
+    margin-top: 3rem;
+}
+
+.auth-filters {
+    @include mixin.flex-box(space-between);
+}
+
+.auth-items {
+    background-color: var(--back-card);
+    padding: 0.75rem;
+    border-radius: 5px;
+    display: flex;
+    &__p {
+        padding: 0 0.2rem;
+        color: var(--color-a);
+    }
+}
+
+.auth-menu {
+    position: relative;
+    background-color: var(--back-card);
+    border-radius: 5px;
+    &__a {
+        cursor: pointer;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        margin: auto;
+        transition: 0.3s ease;
+        position: relative;
+        color: var(--color-a);
+        padding: 0.9em;
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+}
+
+.auth-dropdown {
+    z-index: 3;
+    height: 0px;
+    width: 190px;
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: 0;
+    background-color: var(--back-card);
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    &__li {
+        display: block;
+    }
+    &__a {
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-a);
+        transition: all 0.3s ease;
+        text-transform: capitalize;
+    }
+}
+
+.auth-dropdown-activo {
+    display: block;
+    height: 150px;
+    pointer-events: auto;
+    padding: 10px 0;
+    border-top: 3px solid var(--color-primary);
+}

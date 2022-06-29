@@ -1,27 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 //COMPONENTS
 import { NopagesfoundComponent } from './nopagesfound/nopagesfound.component';
-import { ContentfulService } from '../services/contentful.service';
+import { CollectionCardComponent } from './collection-card/collection-card.component';
 
 
-import { MarkdownPipe } from '../pipes/markdown.pipe';
 
 @NgModule({
   declarations: [
- 
-    NopagesfoundComponent
+    NopagesfoundComponent,
+    CollectionCardComponent,
+  
  
   ],
   imports: [
     CommonModule,
-
+    RouterModule
   ],
   exports: [
-    NopagesfoundComponent
+    NopagesfoundComponent,
+   
   ],
   providers:[ 
-    ContentfulService
+  
   ]
 })
 export class ComponentsModule { }

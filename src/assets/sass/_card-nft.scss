@@ -1,0 +1,107 @@
+@use 'mixin';
+.collection__container {
+    @include mixin.grid-box(repeat(3, 1fr), 2rem);
+    margin-bottom: 4rem;
+}
+
+.collection {
+    padding: 20px;
+    background-color: var(--back-card);
+    border-radius: 10px;
+    position: relative;
+    &-category {
+        position: absolute;
+        top: 0;
+        left: var(--m1-5);
+        background: var(--color-primary);
+        border-bottom-left-radius: 0.98rem;
+        border-bottom-right-radius: 0.98rem;
+        display: inline-block;
+        padding: 0.19rem 0.625rem;
+        font-size: var(--small-font-size);
+        font-weight: var(--font-semi-bold);
+        color: #FFF;
+    }
+    &-nft {
+        margin-bottom: 1.5rem;
+        &__figure {
+            height: 330px;
+        }
+        &__img {
+            border-radius: 10px;
+            height: 100%;
+        }
+    }
+    &__content {
+        margin-bottom: 0.8rem;
+    }
+    &-title {
+        margin-bottom: 0.55rem;
+        &__h3 {
+            font-size: .9rem;
+            font-weight: var(--font-600);
+        }
+    }
+    &-info-wrapper {
+        display: flex;
+    }
+    &-info {
+        @include mixin.flex-box(space-between);
+        width: 100%;
+    }
+    &-author {
+        &__figure {
+            width: 40px;
+            height: 40px;
+        }
+        &__img {
+            border-radius: 50%;
+        }
+    }
+    &-details {
+        padding: 0 0.50rem;
+        &__h6 {
+            font-size: .7rem;
+            color: var(--color-text);
+            opacity: 80%;
+            margin-bottom: 0;
+        }
+        &__p {
+            font-size: .9rem;
+            opacity: 100%;
+            color: var(--color-text);
+            font-weight: var(--font-500);
+        }
+    }
+    &-prices {
+        display: flex;
+        align-items: center;
+        &__figure {
+            width: 30px;
+            height: 30px;
+            margin: 0 0.40rem;
+        }
+        &__p {
+            color: var(--color-gray);
+            font-weight: var(--font-500);
+        }
+    }
+    &__btn {
+        padding: 0.3rem;
+        @include mixin.flex-box(center);
+        gap: 0.25rem;
+        width: 120px;
+        margin: auto;
+        cursor: pointer;
+    }
+    &__i {
+        color: #ddc1c1;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .collection__container {
+        grid-template-columns: 1fr;
+    }
+}

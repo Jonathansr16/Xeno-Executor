@@ -90,10 +90,10 @@
         color: var(--color-text);
     }
     &__a:hover {
-        color: hsl(229, 76%, 66%);
+        color: var(--color-gray);
     }
     &__a--isActive {
-        background-color: hsl(229, 76%, 66%);
+        background-color: var(--color-primary);
         color: #FFF;
         border-radius: 5px;
         padding: 4px;
@@ -104,7 +104,7 @@
         width: 3px;
         height: 33px;
         right: -10px;
-        background-color: hsl(229, 76%, 66%);
+        background-color: var(--color-primary);
     }
 }
 

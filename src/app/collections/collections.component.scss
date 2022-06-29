@@ -1,16 +1,65 @@
 @use 'mixin';
 .collections {
+    &__banner {
+        margin-top: 8rem;
+        border-radius: 10px;
+        background-image: url('/assets/img/banner_collections.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 500px;
+    }
     &__title {
         margin-top: 6rem;
         text-align: center;
         font-size: 2.5rem;
         font-weight: var(--font-600);
     }
+    &__search {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        position: relative;
+        width: 50%;
+        box-shadow: 0 1px var(--color-gray);
+        &-i {
+            padding: 0 0.50em;
+        }
+        &-input {
+            border: none;
+            outline: none;
+            color: var(--color-text);
+            box-shadow: 0 1px var(--color-gray);
+            padding: 8px 3px;
+            background-color: transparent;
+            transition: all .3s;
+            display: block;
+            width: 100%;
+        }
+        &-input:focus~&-label,
+        &-input:valid~&-label {
+            top: 0;
+            font-size: .8rem;
+        }
+        &-label {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            color: var(--color-gray);
+            padding: 8px 43px;
+            z-index: -1;
+            transition: all .3s;
+        }
+    }
     &__ul {
         padding: 0 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
     &__li {
         margin: 2rem 0;
@@ -34,54 +83,13 @@
     }
 }
 
-.collection {
-    @include mixin.grid-box(repeat(3, 1fr), 2rem);
-    &__item {
-        position: relative;
-    }
-    &__figure {
-        height: 380px;
-    }
-    &__img {
-        border-radius: 0 0 10px 10px;
-        height: 430px;
-    }
-    &__light {
-        background: linear-gradient(120deg, #FFF, hsla(0, 0%, 100%, 0));
-        position: absolute;
-        top: 0.1em;
-        left: 0.1em;
-        width: 80%;
-        height: 50%;
-        padding-top: 80%;
-        z-index: -1;
-        border-radius: 10px;
-        filter: drop-shadow(0 0 0.7em #1cd0ff);
-    }
-    &__category {
-        position: absolute;
-        top: 10px;
-        left: 20px;
-        color: #FFF;
-        font-size: 13px;
-        font-weight: var(--font-500);
-        background-color: var(--color-primary);
-        padding: 0.25rem;
-        border-radius: 10px;
-    }
-    &__details {
-        margin-top: 0.55rem;
-        padding: 1rem;
-    }
-    &__span {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-block: 10px;
-        color: var(--color-gray);
-        &-p {
-            color: hsl(227deg 100% 76%);
-            font-weight: var(--font-500);
+
+/* ============= RESPONSIVE COLLECTIONS ============ */
+
+@media screen and (max-width: 768px) {
+    .collections {
+        &__search {
+            width: 100%;
         }
     }
 }

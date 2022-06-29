@@ -9,9 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 //SHARED MODULE
-import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
-import { ComponentsModule } from './components/components.module';
+import { SharedModule } from '@shared/shared.module';
+import { HomeModule } from '@home/home.module';
+import { ComponentsModule } from '@components/components.module';
 
 
 

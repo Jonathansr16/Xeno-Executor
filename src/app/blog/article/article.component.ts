@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 //SERVICES
 
-import { ContentfulService } from 'src/app/services/contentful.service';
+import { ContentfulService } from '@services/contentful.service';
 
 @Component({
   selector: 'app-article',

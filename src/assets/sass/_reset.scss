@@ -116,8 +116,8 @@ q:after {
 /* ============ Configuramos el texto seleccionado  =============  */
 
 ::selection {
-    background-color: var(--color-main);
-    color: var(--color-secondary);
+    background-color: hsla(253, 15%, 65%, 0.31);
+    color: rgb(103, 125, 180);
 }
 
 

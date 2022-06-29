@@ -5,17 +5,17 @@
             <h2 class="nav__h2">Cripto <span class="nav__span"> Recarga</span> </h2>
         </a>
         <!-- ======= Nav list ======= -->
-        <div class="nav__container" #navMenu>
+        <div class="nav__container" [ngClass]="{ 'nav__container-active' : navActive }">
             <ul class="nav__ul">
 
                 <li class="nav__li"><a routerLink="/" class="nav__a">Home</a></li>
 
                 <li class="nav__li nav__li--submenu">
-                    <a data-dropdwon="sub-menu" routerLink="collections" class="nav__a  nav__a--submenu">Collections
+                    <a data-dropdwon="sub-menu" routerLink="collections" class="nav__a  nav__a--submenu">Marketplace
                         <i class='nav__i--arrow bx bx-chevron-down'></i>
                     </a>
 
-                    <ul class="nav-dropdown">
+                    <!-- <ul class="nav-dropdown">
                         <li class="nav-dropdown__li">
                             <a routerLink="collections" class="nav-dropdown__a">Collections</a>
                             <a href="#" class="nav-dropdown__a">Arts</a>
@@ -25,7 +25,7 @@
                             <a href="#" class="nav-dropdown__a">Trading Cards</a>
                             <a href="#" class="nav-dropdown__a">Virtual Worlds</a>
                         </li>
-                    </ul>
+                    </ul> -->
 
                 </li>
 
@@ -43,9 +43,7 @@
                     </ul>
                 </li>
 
-                <li class="nav__li">
-                    <a href="#" class="nav__a">Marketplace </a>
-                </li>
+
                 <!-- WALLET -->
                 <div class="nav-wallet">
 
@@ -54,7 +52,7 @@
                     </a>
                 </div>
             </ul>
-            <div class="nav__close" id="nav__close" #nav_close (click)="hiddenMenu()">
+            <div class="nav__close" id="nav__close" (click)="closeNav()">
                 <i class='bx bx-x nav__i'></i>
             </div>
 
@@ -65,19 +63,19 @@
         <!-- Btn nav -->
         <div class="nav__btns">
             <!-- Theme change btn -->
-            <i class='bx bxs-palette nav__palette' id="theme-buttom" #themeBtn (click)="openTheme()"></i>
+            <i class='bx bxs-palette nav__palette' id="theme-buttom" (click)="openTheme()"></i>
 
             <!-- Toggle btn -->
-            <div class="nav__toggle" id="nav__toggle" #navToggle (click)="showMenu()">
+            <div class="nav__toggle" id="nav__toggle" (click)="openNav()">
                 <i class='bx bx-grid-alt'></i>
             </div>
         </div>
     </nav>
 
     <!-- ======= THEME ======= -->
-    <div class="theme" #themeCard>
+    <div class="theme" [ngClass]="{ 'theme-active' : themeActive }">
         <div class="theme__card">
-            <i class='theme__i bx bxs-x-circle' #btnmodal (click)="closeModal()"></i>
+            <i class='theme__i bx bxs-x-circle' (click)="closeTheme()"></i>
             <h2 class="theme__h2">Customize your view</h2>
             <p class="theme__p">Manage your font size, color and background</p>
 

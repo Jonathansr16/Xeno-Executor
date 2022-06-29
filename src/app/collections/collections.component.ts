@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomedataService, galleries } from '../services/homedata.service';
+import { HomedataService, gallery } from '@services/homedata.service';
 
 @Component({
   selector: 'app-collections',
@@ -9,7 +9,7 @@ import { HomedataService, galleries } from '../services/homedata.service';
 export class CollectionsComponent implements OnInit {
 
 
-  data: galleries[] = [];
+  data: gallery[] = [];
 
   constructor(private blogData: HomedataService) { }
 
