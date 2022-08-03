@@ -40,6 +40,10 @@ export class ContentfulService {
    
   }
 
+  getInformation() {
+    return this.cdaClient.getEntries().then(entries => console.log(entries))
+  }
+
   getPost(id: string): any {
     return from(this.cdaClient.getEntry(id));
   }

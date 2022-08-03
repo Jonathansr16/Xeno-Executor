@@ -16,44 +16,6 @@
         font-size: 2.5rem;
         font-weight: var(--font-600);
     }
-    &__search {
-        display: flex;
-        align-items: center;
-        padding-top: 20px;
-        margin-bottom: 5px;
-        border-radius: 10px;
-        position: relative;
-        width: 50%;
-        box-shadow: 0 1px var(--color-gray);
-        &-i {
-            padding: 0 0.50em;
-        }
-        &-input {
-            border: none;
-            outline: none;
-            color: var(--color-text);
-            box-shadow: 0 1px var(--color-gray);
-            padding: 8px 3px;
-            background-color: transparent;
-            transition: all .3s;
-            display: block;
-            width: 100%;
-        }
-        &-input:focus~&-label,
-        &-input:valid~&-label {
-            top: 0;
-            font-size: .8rem;
-        }
-        &-label {
-            position: absolute;
-            left: 0;
-            top: 20px;
-            color: var(--color-gray);
-            padding: 8px 43px;
-            z-index: -1;
-            transition: all .3s;
-        }
-    }
     &__ul {
         padding: 0 8px;
         display: flex;
@@ -83,6 +45,45 @@
     }
 }
 
+//SEARCH
+// .search {
+//     display: flex;
+//     align-items: center;
+//     padding-top: 20px;
+//     margin-bottom: 5px;
+//     border-radius: 10px;
+//     position: relative;
+//     width: 50%;
+//     box-shadow: 0 1px var(--color-gray);
+//     &__i {
+//         padding: 0 0.50em;
+//     }
+//     &__input {
+//         border: none;
+//         outline: none;
+//         color: var(--color-text);
+//         box-shadow: 0 1px var(--color-gray);
+//         padding: 8px 3px;
+//         background-color: transparent;
+//         transition: all .3s;
+//         display: block;
+//         width: 100%;
+//     }
+//     &__input:focus~&__label,
+//     &__input:valid~&__label {
+//         top: 0;
+//         font-size: .8rem;
+//     }
+//     &__label {
+//         position: absolute;
+//         left: 0;
+//         top: 20px;
+//         color: var(--color-gray);
+//         padding: 8px 43px;
+//         z-index: -1;
+//         transition: all .3s;
+//     }
+// }
 
 /* ============= RESPONSIVE COLLECTIONS ============ */
 

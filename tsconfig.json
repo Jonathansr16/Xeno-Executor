@@ -6,8 +6,10 @@
     "paths": {
       "@services/*": ["src/app/services/*"],
       "@components/*": ["src/app/components/*"],
+      "@collections/*": ["src/app/collections/*"],
       "@shared/*": ["src/app/shared/*"],
-      "@home/*": ["src/app/home/*"]
+      "@home/*": ["src/app/home/*"],
+      "@pipes/*": ["src/app/pipes/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

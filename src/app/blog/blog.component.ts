@@ -18,6 +18,7 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
 
     this.contenFulService.getPosts().then(posts => this.posts$ = posts);
+    this.contenFulService.getInformation()
   }
 
   

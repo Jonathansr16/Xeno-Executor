@@ -5,10 +5,15 @@
 }
 
 .collection {
+    cursor: pointer;
     padding: 20px;
     background-color: var(--back-card);
     border-radius: 10px;
     position: relative;
+    transition: transform ease 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
     &-category {
         position: absolute;
         top: 0;

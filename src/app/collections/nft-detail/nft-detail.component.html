@@ -1,1 +1,55 @@
-<p>nft-detail works!</p>
+<section class="nft-banner">
+    <div class="nft-banner__contaienr container">
+        <figure class="nft-banner__figure">
+            <img src="assets/img/banner__nft.webp" class="nft-banner__img" alt="">
+        </figure>
+    </div>
+
+    <div class="nft-auth container">
+        <div class="nft-auth-img__container">
+            <figure class="nft-auth__figure">
+                <img [src]="nft.img" class="nft-auth__img" alt="">
+            </figure>
+
+        </div>
+        <div class="nft-auth-details">
+
+            <div class="nft-auth-details__header">
+
+                <div class="nft-details-title">
+                    <h1 class="nft-auth-details__h1">{{nft.title}}</h1>
+                </div>
+
+
+                <div class="nft-auth-details__shared">
+                    <i class='bx bx-share-alt nft-auth-details__i'></i>
+                </div>
+            </div>
+
+
+            <div class="nft-auth-records">
+                <div class="nft-auth-records__view">
+                    <i class='bx bx-show nft-auth-records__i'></i>
+                    <span class="nft-auth-records__span">23</span>
+                </div>
+
+                <div class="nft-auth-records__likes">
+                    <i class='bx bxs-heart nft-auth-records__i'></i>
+                    <span class="nft-auth-records__span">33</span>
+                </div>
+            </div>
+
+            <div class="nft-auth-details__description">
+
+                <div class="nft-auth-details__author">
+                    <div class="nft-auth-owner">
+                        <i class='bx bx-user-circle nft-auth-owner__i'></i>
+                        <h3 class="nft-auth-owner__h3">Owner by</h3>
+                    </div>
+                    <h2 class="nft-auth-owner__h2">{{ nft.author }}</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

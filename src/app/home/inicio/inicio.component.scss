@@ -490,9 +490,12 @@
         display: grid;
     }
     &__item:hover {
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.2);
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
+    }
+    &__item:hover .gallery__mask {
+        opacity: 0.9;
     }
     &__img {
         border-radius: 10px;
@@ -549,6 +552,8 @@
         align-items: center;
         gap: 10px;
         margin-block: 10px;
+        color: var(--color-gray);
+        font-weight: var(--font-600);
         &-p {
             color: var(--color-text);
             font-weight: var(--font-600);

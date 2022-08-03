@@ -143,8 +143,8 @@ export class HomedataService {
 
     {
     
-      category: "Collectible",
       url: "ALTAVA-Second-Skin",
+      category: "Collectible",
       authorImg: "assets/img/author_nft-2.png",
       author: "ALTAVA Second Skin",
       img: "assets/img/nft_collectible.png",
@@ -156,8 +156,8 @@ export class HomedataService {
 
     {
    
-      category: "Photography",
       url: "The-Dark-Days",
+      category: "Photography",
       authorImg: "assets/img/author_nft3.gif",
       author: "The Dark Days",
       img: "assets/img/nft_photography.jpg",
@@ -169,8 +169,8 @@ export class HomedataService {
 
     {
     
-      category: "Virtual World",
       url: 'Boryoku-Dragonz',
+      category: "Virtual World",
       authorImg: "assets/img/author_nft4.gif",
       author: "Boryoku Dragonz",
       img: "assets/img/nft_vitual-world.png",
@@ -182,8 +182,8 @@ export class HomedataService {
 
     {
      
-      category: "Music",
       url: 'Snoop-Dogg-on-Sound-XYZ',
+      category: "Music",
       authorImg: "assets/img/author_nft4.gif",
       author: "Snoop Dogg on Sound XYZ",
       img: "assets/img/music.jpg",
@@ -195,8 +195,8 @@ export class HomedataService {
 
     {
    
-      category: "Sport",
       url: 'McLaren-MSO-LAB-Genesis',
+      category: "Sport",
       authorImg: "assets/img/author_nft4.gif",
       author: "McLaren MSO LAB Genesis",
       img: "assets/img/sport.png",
@@ -223,8 +223,27 @@ export class HomedataService {
     return this.galleries;
   }
   
-}
+  
+  searchCollection(termino: string): gallery[] {
 
+    let collectionArr: gallery[];
+    termino= termino.toLowerCase();
+    for(let i=0; i< this.galleries.length; i++) {
+
+      let collection= this.galleries[i];
+      let title= collection.title.toLowerCase();
+
+      if(title.indexOf(termino) >=0) {
+        collection.idx = i;
+        collectionArr.push(collection);
+      }
+    }
+
+    return collectionArr;
+  }
+
+
+} //close class
 
 
 
@@ -250,5 +269,5 @@ export interface gallery {
   price: number;
   icon: string;
   link: string;
-  id?: string;
+  idx?: number;
 }

@@ -1,0 +1,89 @@
+@use 'mixin';
+.nft-banner {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    }
+    &__figure {
+        top: 0;
+        left: 0;
+        height: 550px;
+        width: 100%;
+    }
+    &__img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        object-fit: fill
+    }
+}
+
+.nft-auth {
+    @include mixin.grid-box(1fr 1fr, 2em);
+    margin-top: 8rem;
+    &-img__container {
+        margin-bottom: 6rem;
+    }
+    &__figure {
+        height: 400px;
+    }
+    &__img {
+        border-radius: 10px;
+        height: 450px;
+    }
+}
+
+.nft-auth-details {
+    background-color: var(--back-card);
+    padding: 0.70rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    &__header {
+        @include mixin.flex-box(space-between);
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+    &__shared {
+        cursor: pointer;
+    }
+    &__i {
+        color: hsl(152, 75%, 60%);
+        font-weight: var(--font-500);
+    }
+    &__span {
+        color: var(--color-gray);
+        font-weight: var(--font-600);
+    }
+    &__h1 {
+        font-size: 1.7rem;
+    }
+}
+
+.nft-auth-records {
+    display: flex;
+    &__span {
+        color: var(--color-text);
+        font-weight: var(--font-600);
+        padding: 0 0.25rem;
+    }
+    &__view {
+        margin: 0 0.95rem 0.7rem 0;
+    }
+}
+
+.nft-auth-owner {
+    display: flex;
+    &__i {
+        color: var(--color-primary);
+        margin-right: 0.2em;
+    }
+    &__h2 {
+        font-size: 1.5rem;
+        padding: 0.3rem;
+    }
+}

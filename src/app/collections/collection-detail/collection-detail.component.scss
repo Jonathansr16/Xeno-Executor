@@ -1,5 +1,5 @@
 @use 'mixin';
-.c-detail {
+.auth-detail {
     &__banner {
         margin: 7rem 4rem;
         background-image: url('/assets/img/banner-details.webp');
@@ -11,6 +11,210 @@
     }
 }
 
+.auth-content {
+    @include mixin.grid-box(20% auto,
+    2em);
+}
+
+
+/* ============ AUTH ASIDE ============  */
+
+.auth-aside {
+    background-color: var(--back-card);
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    margin: 3rem 0 0 1rem;
+    width: 100%;
+    &__separator {
+        width: 90%;
+        margin: 0px 12px 8px 10px;
+        border-bottom: 1px solid rgba(229, 232, 235, 0.5);
+    }
+}
+
+.auth-section {
+    margin-bottom: 2rem;
+}
+
+.auth-title {
+    border-top: 1px solid var(--color-gray);
+    border-bottom: 1px solid var(--color-gray);
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 3rem;
+    &__h4 {
+        font-weight: var(--font-500);
+        @include mixin.flex-box(space-between);
+        pointer-events: auto;
+    }
+}
+
+
+/* ============ DROPDWON ASIDE ============  */
+
+.aside-dropdown {
+    z-index: 3;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    &__activo {
+        display: block;
+        height: 115px;
+    }
+    &__li {
+        margin-top: 1rem;
+        color: var(--color-text);
+    }
+    &__label {
+        @include mixin.flex-box(space-between);
+        width: 100%;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+    &__input {
+        display: none;
+        &:checked+.aside-dropdown__checkbox {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+    }
+    &__checkbox {
+        border: 2px solid rgb(229, 232, 235);
+        height: 24px;
+        min-width: 24px;
+        max-width: 24px;
+        border-radius: 6px;
+        background-color: rgb(255, 255, 255);
+        transition: background 0.15s, border-color 0.15s;
+        &:after {
+            content: "\2714";
+            color: #FFF;
+            @include mixin.flex-box(center);
+        }
+    }
+}
+
+.auth-status {
+    padding: 0 10px;
+    position: sticky;
+    pointer-events: none;
+    top: 4.5em;
+    &__separator {
+        position: absolute;
+        bottom: -120px;
+        left: 0;
+        width: 90%;
+        height: 16px;
+        margin: 0px 12px 8px 10px;
+        border-bottom: 1px solid rgba(229, 232, 235, 0.5);
+    }
+}
+
+.container-error-message {
+    padding: 0.55em;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+    margin-bottom: 0.25em;
+    margin-top: 0.65rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.aside-form {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__combo {
+        background: rgb(255, 255, 255);
+        width: 65px;
+        height: 28px;
+        border: 2px solid rgb(229, 232, 235);
+        border-radius: 12px;
+    }
+    &__combobox {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #5a4e4e;
+        font-weight: var(--font-500);
+        pointer-events: auto;
+        cursor: pointer;
+    }
+    &__container {
+        background: rgb(255, 255, 255);
+        width: 55px;
+        height: 28px;
+        border: 2px solid rgb(229, 232, 235);
+        border-radius: 12px;
+        overflow: hidden;
+        pointer-events: auto;
+    }
+    &__text {
+        padding: 0 0.20rem;
+        font-weight: var(--font-500);
+    }
+    &__input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        line-height: 28px;
+        min-height: 28px;
+        color: #000;
+        text-align: center;
+    }
+    &__btns {
+        @include mixin.flex-box(center);
+        margin-top: 0.55rem;
+        pointer-events: none;
+        cursor: none;
+    }
+    &__btn {
+        padding: 0.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        width: 120px;
+        margin: auto;
+        cursor: pointer;
+    }
+}
+
+.aside-form__btn:enabled {
+    cursor: pointer;
+    pointer-events: auto;
+    background-color: var(--color-primary);
+    transform: perspective(1px) translateZ(0);
+    border-radius: 8px;
+    &:hover:enabled {
+        animation-name: button-push;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+}
+
+.aside-form__btm:disabled {
+    cursor: none;
+    pointer-events: none;
+}
+
+.aside-dropdown-prices__activo {
+    display: block;
+    height: 162px;
+}
+
+//NFT
 .author {
     position: absolute;
     bottom: -100px;
@@ -107,4 +311,17 @@
     pointer-events: auto;
     padding: 10px 0;
     border-top: 3px solid var(--color-primary);
+}
+
+//RESPONSIVE COLLECTION DETAILS AUTHOR  
+@media screen and (max-width: 768px) {
+    .auth-filters {
+        justify-content: space-around;
+    }
+    .auth-content {
+        grid-template-columns: 1fr;
+    }
+    .collection__container {
+        grid-template-columns: 1fr;
+    }
 }

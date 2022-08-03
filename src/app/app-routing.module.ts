@@ -6,9 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './home/inicio/inicio.component';
 import { FaqsComponent } from './home/faqs/faqs.component';
 import { ContactComponent } from './home/contact/contact.component';
-
 import { NopagesfoundComponent } from './components/nopagesfound/nopagesfound.component';
-import { CollectionsModule } from './collections/collections.module';
 import { BlogRoutingModule } from './blog/blog-routing.module';
 import { CollectionsRoutingModule } from './collections/collections-routing.module';
 

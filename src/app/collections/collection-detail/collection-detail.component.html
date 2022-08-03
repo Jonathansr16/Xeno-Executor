@@ -1,6 +1,6 @@
-<section class="c-detail">
+<section class="auth-detail">
 
-    <div class="c-detail__banner container">
+    <div class="auth-detail__banner container">
 
         <div class="author">
             <figure class="author__figure">
@@ -41,52 +41,88 @@
         </div>
     </div>
 
-    <div class="author-collection collection__container container">
+    <div class="auth-content">
 
-        <div class="collection" *ngFor="let item of authCollection; let i =index">
+        <div class="auth-aside container">
 
-            <div class="collection-nft">
-                <div class="collection-category">{{ item.category }}</div>
-                <figure class="collection-nft__figure">
-                    <img [src]="item.img" class="collection-nft__img" alt="">
-                </figure>
-            </div>
+            <ul class="auth-status auth-section">
+                <li class="auth-title">
+                    <h4 class="auth-title__h4" (click)="statusBtn()">Status
+                        <i class='bx bx-chevron-down auth-title__i'></i>
+                    </h4>
 
-            <div class="collection__content">
-                <div class="collection-title">
-                    <h3 class="collection-title__h3"> {{ item.title }}</h3>
-                </div>
 
-                <div class="collection-info-wrapper">
-                    <div class="collection-author">
-                        <figure class="collection-author__figure">
-                            <img [src]="item.authorImg" class="collection-author__img" alt="">
-                        </figure>
-                    </div>
+                    <ul class="aside-dropdown" [ngClass]=" {'aside-dropdown__activo' : statusActive} ">
+                        <li class="aside-dropdown__li">
+                            <label for="buyNow" class="aside-dropdown__label">Buy Now
+                                <input type="checkbox" id="buyNow" class="aside-dropdown__input">
+                                <div class="aside-dropdown__checkbox"></div>
+                            </label>
+                        </li>
 
-                    <div class="collection-info">
-                        <div class="collection-details">
-                            <h6 class="collection-details__h6">Created By</h6>
-                            <p class="collection-details__p">{{ item.author }}</p>
-                        </div>
+                        <li class="aside-dropdown__li">
+                            <label for="onAction" class="aside-dropdown__label">On Auction
+                                <input type="checkbox" id="onAction" class="aside-dropdown__input">
+                                <div class="aside-dropdown__checkbox"></div>
+                            </label>
 
-                        <div class="collection-prices">
-                            <h6 class="collection-prices__h6"> {{ item.price }}</h6>
-                            <figure class="collection-prices__figure">
-                                <img [src]="item.icon" alt="" class="collection-prices-img">
-                            </figure>
-                            <p class="collection-prices__p">ETH</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a [routerLink]="['/collections/', i]" class="btn btn-default collection__btn"> Buy now
-                <i class='bx bxs-basket collection__i'></i>
-            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="auth-title">
+                    <h4 class="auth-title__h4" (click)="priceBtn()">Price
+                        <i class='bx bx-chevron-down auth-title__i'></i>
+                    </h4>
+
+
+
+                    <ul class="aside-dropdown" [ngClass]=" {'aside-dropdown-prices__activo' : priceActive } ">
+                        <li class="aside-dropdown__li">
+                            <form autocomplete="off" [formGroup]="formPrices" (ngSubmit)="save()" class="aside-form">
+
+                                <div class="aside-form__content">
+
+                                    <div class="aside-form__combo">
+                                        <select name="formCurrency" id="" class="aside-form__combobox">
+                                            <option value="USD">USD</option>
+                                            <option value="ETH">ETH</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="aside-form__container">
+                                        <input type="text" class="aside-form__input form-control" formControlName="valueMax" [class.is-invalid]="valueMaxValid">
+                                    </div>
+
+
+
+                                    <div class="aside-form__text">to</div>
+
+
+                                    <div class="aside-form__container">
+                                        <input type="text" class="aside-form__input form-control" formControlName="valueMin" [class.is-valid]="valueMinValid">
+                                    </div>
+
+                                </div>
+
+                                <div class="aside-form__btns">
+                                    <button type="submit" class="aside-form__btn" [disabled]="!formPrices.valid">Apply</button>
+                                </div>
+
+                                <div class="container-error-message" *ngIf="valueMaxValid || valueMinValid">
+                                    only numbers
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
+        <div class="collection__container container">
 
+            <app-nft-card [collection]="collection" [routerLink]="['/collection/', i]" [index]="i" routerLinkActive="router-link-active" *ngFor="let collection of authCollection; let i =index"></app-nft-card>
+        </div>
     </div>
-
-
 
 </section>
